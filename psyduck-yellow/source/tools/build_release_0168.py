@@ -1,7 +1,7 @@
 """Build the public prototype-0168 (BETA 0.1.6.8) release inside the Psyduck-Yellow-Releases repo (patches and documentation only; never a ROM, save or source).
 
 Same layout as build_release_0161.py: a self-contained prototype-0168 folder (the four older patch stages, the new final stage 0039 art -> 0168, the page, manifest and read-me),
-the repository README and the development log. The page is derived from prototype-0161's. The shipped ROM is build 0172 (0168 plus the Route 7/8 tunnel fix, the Celadon Game Corner doors and the Hideout arrows; the owner calls it 0168).
+the repository README and the development log. The page is derived from prototype-0161's. The shipped ROM is build 0173 (0168 plus the Route 7/8 tunnel fix, the Celadon Game Corner doors, the Hideout arrows and the Fighting Dojo; the owner calls it 0168).
 The finished ROM the page hands out is named "Pokemon Psyduck Yellow 0-1-6-8.nds": the name the owner's 3DS forwarder CIA expects.
 
 Usage: build_release_0168.py <releases-repo clone> <0039-art-to-0168.xdelta> <0039 art ROM> <0168 ROM>
@@ -17,7 +17,7 @@ from pathlib import Path
 DATE = 'November 3, 2026'
 VERSION = '0168-BETA'
 LABEL = 'BETA 0.1.6.8'
-FOLDER, PREVIOUS = 'prototype-0168c', 'prototype-0161'      # 0168c: the second update of 0168 (Celadon Game Corner doors, then the Hideout arrows); a new folder each time because the page host caches by path
+FOLDER, PREVIOUS = 'prototype-0168d', 'prototype-0161'      # 0168d: the third update of 0168 (Celadon Game Corner doors, Hideout arrows, then the Saffron Dojo); a new folder each time because the page host caches by path
 OWNER = os.environ.get('RELEASE_OWNER', 'Doctor-Pokemon')       # the account whose Psyduck-Yellow-Releases repo hosts the page
 PAGE = f'https://raw.githack.com/{OWNER}/Psyduck-Yellow-Releases/main/{FOLDER}/index.html'
 OUT_NAME = 'Pokemon Psyduck Yellow 0-1-6-8.nds'
@@ -27,6 +27,7 @@ SOURCE_URL = os.environ.get('SOURCE_URL', 'https://github.com/Doctor-Pokemon/cor
 
 NEW_IN_0168 = [
     '**Replaces BETA 0.1.61.** Use 0.1.6.8: it also opens the way from Lavender Town to Celadon, and from Celadon\'s streets into the Game Corner and the Rocket Hideout, which 0.1.61 left closed.',
+    '**Saffron Fighting Dojo (new):** the man in the Dojo now says the Karate King is away, "...but I can still teach you a lesson.", and battles you as a Black Belt with Yellow\'s Karate Master team (Hitmonlee and Hitmonchan, level 37). After you win, two Poké Balls behind him unlock: pick Hitmonlee or Hitmonchan (level 30, holding a Black Belt); the other ball disappears.',
     '**Rocket Hideout (new):** the spinner (arrow) tiles on B2F and B3F now show a red pad with a white arrow pointing the way each one pushes you, so the mazes can be read.',
     '**Celadon City (new):** the Game Corner (with the Rocket guard and the poster to the Rocket Hideout) now has a door from the street: the blue arched door. Mr. Game\'s room moved behind the red door next to it, and a door in the middle of his north wall leads to the Prize Redemption room, whose south door leads back.',
     '**Route 7 / Route 8 tunnel (new):** the sealed Underground Path doors on Route 8 (east of the Saffron gatehouse) and Route 7 now lead to each other, so you can get from Lavender Town to Celadon City before Saffron opens. This is a plain door-to-door shortcut with no tunnel interior yet. The old notice on Route 7 still says the path is sealed.',
@@ -38,7 +39,7 @@ NEW_IN_0168 = [
 ]
 
 BLURB = ('<p><strong>BETA 0.1.6.8 (prototype 0168) — for testing.</strong> The Kanto campaign from Pallet Town to the first Hall of Fame, plus the <strong>first parts of the Johto postgame</strong>. New since 0.1.61: '
-         'a Route 7 / Route 8 shortcut that opens the way from Lavender Town to Celadon, a Celadon Game Corner that can finally be entered from the street, visible arrows on the Rocket Hideout spinner tiles, a Lavender Town Pokémon Tower door and sign like Yellow\'s, a faster Pewter escort, both Mart clerks selling, TM labels in the bag and the Vermilion Gym sign.</p>'
+         'a Route 7 / Route 8 shortcut that opens the way from Lavender Town to Celadon, a Celadon Game Corner that can finally be entered from the street, visible arrows on the Rocket Hideout spinner tiles, a Fighting Dojo battle with a Hitmonlee/Hitmonchan prize in Saffron, a Lavender Town Pokémon Tower door and sign like Yellow\'s, a faster Pewter escort, both Mart clerks selling, TM labels in the bag and the Vermilion Gym sign.</p>'
          '<p><strong>How much has been played:</strong> the developer has played New Game through Lavender Town on earlier builds. Everything after that, and all of Johto, has only been checked in small emulator tests on prepared saves, not played through. '
          'Expect bugs, including possible softlocks. <strong>Johto is unfinished:</strong> the postgame steps listed in the notes exist, but the rest of Johto has not been checked.</p>'
          '<p>Start a <strong>New Game</strong>; saves from older prototypes are not supported. Keep this build and its saves separate.</p>')
@@ -55,13 +56,13 @@ HOW TO PLAY
 4. Start a NEW GAME. Saves from older prototypes do not work (a renamed old save may behave strangely). Keep this build and its saves separate, and never reuse emulator save states between versions.
 Nothing is uploaded; the patching happens in your browser and every step is hash-checked. Expected final SHA256: {{sha}}
 
-WHAT IS NEW SINCE 0.1.61 (internal builds 0162-0172)
+WHAT IS NEW SINCE 0.1.61 (internal builds 0162-0173)
 ''' + '\n'.join('- ' + x.replace('**', '') for x in NEW_IN_0168) + '''
 - Everything from 0.1.61 is still here. The save layout is unchanged.
 
 WHAT HAS BEEN TESTED
 - The developer has played New Game through Lavender Town on earlier builds, partly on a real 3DS.
-- Everything in the list above has only had small emulator checks on prepared test saves (the door, sign, shop or escort used once and the exit taken). The Route 7 / Route 8 shortcut was walked in both directions in the emulator and confirmed on a real 3DS. The Celadon doors (Game Corner, Mr. Game, Prize room) were confirmed on a real 3DS. The Rocket Hideout arrows were checked in the emulator only (screenshots of B2F and B3F and one slide).
+- Everything in the list above has only had small emulator checks on prepared test saves (the door, sign, shop or escort used once and the exit taken). The Route 7 / Route 8 shortcut was walked in both directions in the emulator and confirmed on a real 3DS. The Celadon doors (Game Corner, Mr. Game, Prize room) were confirmed on a real 3DS. The Rocket Hideout arrows and the Fighting Dojo battle and prize were checked in the emulator only (screenshots, one slide, a won battle, picking a ball).
 - Everything after Lavender, and every Johto step, has only had small emulator checks on prepared test saves and has never been played through in one go.
 
 NOT BUILT YET
@@ -91,7 +92,7 @@ LOG_ENTRY = f'''
 
 [Create {LABEL}]({PAGE}). It builds from your original USA HeartGold file in your browser; nothing is uploaded. The finished game is named "{OUT_NAME}".
 
-What changed since 0.1.61 (internal builds 0162–0172):
+What changed since 0.1.61 (internal builds 0162–0173):
 ''' + '\n'.join('- ' + x for x in NEW_IN_0168) + '''
 - Not changed: the save layout.
 
@@ -184,11 +185,11 @@ def main(releases, delta, art_rom, new_rom):
         assert readme.count(old_text) == 1, old_text
         readme = readme.replace(old_text, new_text)
     readme = re.sub(r'\[hosted BETA 0\.1\.61 patching page\]\([^)]*\)', f'[hosted {LABEL} patching page]({PAGE})', readme)
-    new_line = "- **New in 0168:** a Route 7 / Route 8 shortcut opens the way from Lavender Town to Celadon; the Lavender Pokémon Tower door and sign follow Yellow; Brock's escort in Pewter is faster; both Mart clerks sell; the custom TMs show their TM numbers; the Vermilion Gym sign reads \"The Lightning Unovan\"; the Celadon Game Corner can be entered from the street; the Rocket Hideout spinner tiles show arrows.\n"
+    new_line = "- **New in 0168:** a Route 7 / Route 8 shortcut opens the way from Lavender Town to Celadon; the Lavender Pokémon Tower door and sign follow Yellow; Brock's escort in Pewter is faster; both Mart clerks sell; the custom TMs show their TM numbers; the Vermilion Gym sign reads \"The Lightning Unovan\"; the Celadon Game Corner can be entered from the street; the Rocket Hideout spinner tiles show arrows; the Saffron Fighting Dojo master can be fought for a Hitmonlee or Hitmonchan.\n"
     marker_line = '- **New in 0161:**'
     assert readme.count(marker_line) == 1
     readme = readme.replace(marker_line, new_line + marker_line)
-    entry = (f'- **{LABEL} (prototype 0168) — {DATE} (beta, testing only).** Opens the way from Lavender Town to Celadon (Route 7 / Route 8 shortcut) and into the Celadon Game Corner, shows arrows on the Rocket Hideout spinner tiles, plus the Lavender Pokémon Tower door and sign, a faster Pewter escort, both Mart clerks selling, TM labels and the Vermilion Gym sign. Everything else as in 0.1.61. Kanto complete to the first Hall of Fame; Johto unfinished.\n')
+    entry = (f'- **{LABEL} (prototype 0168) — {DATE} (beta, testing only).** Opens the way from Lavender Town to Celadon (Route 7 / Route 8 shortcut) and into the Celadon Game Corner, shows arrows on the Rocket Hideout spinner tiles, adds the Saffron Fighting Dojo battle and prize, plus the Lavender Pokémon Tower door and sign, a faster Pewter escort, both Mart clerks selling, TM labels and the Vermilion Gym sign. Everything else as in 0.1.61. Kanto complete to the first Hall of Fame; Johto unfinished.\n')
     marker = '## Release history (newest first)\n'
     assert marker in readme
     readme = readme.replace(marker, marker + entry)

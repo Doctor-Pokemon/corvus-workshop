@@ -1,0 +1,515 @@
+# Candidate custom flags/variables of ROM 0172 (not in vanilla HeartGold) with the tools/plan lines that mention each (2026-11-03). Raw material for the PKHeX flags_py / const_py label files; 60 entries have no tool mention (unknown or false positives).
+FLAG 0xC | tools: bulk_candy_fix.py, check_opening_ram.py, johto_step2.py, pewter_entry_fix.py, vs_banner_names.py
+       bulk_candy_fix.py 7 0x023DB29C  movs r1, #0xA1 ; str r0, [sp, #0xC] ; ldr r0, [sp] ; bl 0x01FFD76C ; (next, unchanged) lsls r6, r0, #0x18
+       bulk_candy_fix.py 34 original = asm('movs r2, #0\nmovs r1, #0xa1\nstr r0, [sp, #0xc]\nldr r0, [sp]\nblx r6', SITE)
+FLAG 0x10 | tools: adventure_ready.py, cave_floor.py, check_opening_ram.py, johto_step6_red.py, pewter_entry_fix.py
+       adventure_ready.py 19 TREES=[(19,1021,235,0x10),(20,1032,235,0x11)]
+       cave_floor.py 18 FACILITY_COLL = {0x01, 0x10, 0x11, 0x13, 0x1b, 0x20, 0x21, 0x22, 0x30, 0x31, 0x32, 0x42, 0x43, 0x48, 0x52, 0x55, 0x58, 0x5e}      
+FLAG 0x1F | tools: script_dis.py
+       script_dis.py 3 ARGS={0x182:'H',0x156:'HHH',0xF0:'HHHHH',0x96:'',0xA3:'H',0x9D:'',0xB5:'',0xC6:'Bh',0xC2:'Bh',0xC1:'Bh',0xC5:'Bh',0x81:'HH',0x5D:'
+FLAG 0x21 | tools: cave_floor.py, kanto_strength_badge.py, kanto_surf_badge.py, route5_gate_interior.py, route5_materials.py
+       cave_floor.py 17 CAVERN_COLL = {0x05, 0x15, 0x18, 0x1a, 0x20, 0x21, 0x22, 0x2a, 0x2d, 0x30}      # Cavern_Coll (pokeyellow data/tilesets/collision_
+       cave_floor.py 18 FACILITY_COLL = {0x01, 0x10, 0x11, 0x13, 0x1b, 0x20, 0x21, 0x22, 0x30, 0x31, 0x32, 0x42, 0x43, 0x48, 0x52, 0x55, 0x58, 0x5e}      
+FLAG 0x4E | tools: script_dis.py, town_map_kanto_first.py
+       script_dis.py 3 ARGS={0x182:'H',0x156:'HHH',0xF0:'HHHHH',0x96:'',0xA3:'H',0x9D:'',0xB5:'',0xC6:'Bh',0xC2:'Bh',0xC1:'Bh',0xC5:'Bh',0x81:'HH',0x5D:'
+       town_map_kanto_first.py 22 CURSOR_LEVEL = 0x021EA7A8        # movs r0,#0x4e ; lsls r0,r0,#2 ; ldrb r0,[r6,r0] ; lsls r0,r0,#0x19 ; lsrs r0,r0,#0x1e  (then bn
+FLAG 0x5A | tools: safari_probe.py, safari_yellow.py
+       safari_probe.py 8 FOREST_COLL = {0x1E, 0x20, 0x2E, 0x30, 0x34, 0x37, 0x39, 0x3A, 0x40, 0x51, 0x52, 0x5A, 0x5C, 0x5E, 0x5F}
+       safari_yellow.py 36 FOREST_COLL = {0x1E, 0x20, 0x2E, 0x30, 0x34, 0x37, 0x39, 0x3A, 0x40, 0x51, 0x52, 0x5A, 0x5C, 0x5E, 0x5F}      # Forest_Coll (walka
+FLAG 0x5C | tools: forest_progression.py, mansion_yellow.py, mtmoon.py, mtmoon_encounters.py, mtmoon_yellow.py
+       forest_progression.py 53 for at in [0x5C,0x60,0x64,0x68]:struct.pack_into('<2H',b,at,species[0],species[1])
+       mansion_yellow.py 315 for at in (0x5C, 0x60, 0x64, 0x68, 0xBC):
+FLAG 0x61 | tools: script_dis.py
+       script_dis.py 3 ARGS={0x182:'H',0x156:'HHH',0xF0:'HHHHH',0x96:'',0xA3:'H',0x9D:'',0xB5:'',0xC6:'Bh',0xC2:'Bh',0xC1:'Bh',0xC5:'Bh',0x81:'HH',0x5D:'
+FLAG 0x142 | tools: -
+FLAG 0x93D | tools: silph_yellow.py
+       silph_yellow.py 42 KEY_BALL_FLAG = 0x93D                            # hides the Card Key ball once taken
+FLAG 0x954 | tools: mansion_yellow.py, viridian_gym_yellow.py
+       mansion_yellow.py 56 BALL_FLAGS = {'ESCAPE_ROPE': 0x954, 'CARBOS': 0x95C, 'CALCIUM': 0x960, 'MAX_POTION': 0x968, 'IRON': 0x970, 'RARE_CANDY': 0x974, 'F
+       viridian_gym_yellow.py 36 NEW_IDS = [1025, 1026, 1027, 1029]                      # Yellow's other four: new records; defeat flags 0x951-0x953 and 0x955 (ch
+FLAG 0x956 | tools: victoryroad_yellow.py
+       victoryroad_yellow.py 35 FLAGS = {'b1': 0x956, 'b2a': 0x957, 'b2b': 0x958, 'b3': 0x959}        # one hide flag per barrier (checked free by trainer_alloc.a
+       MAP-IDS.md 45 Flags/variables already allocated (never reuse): persistent flags must stay below 0xAA0; used A7D, A7F, A87, A9D, A9E, A9F, Mega 0
+FLAG 0x957 | tools: victoryroad_yellow.py
+       victoryroad_yellow.py 35 FLAGS = {'b1': 0x956, 'b2a': 0x957, 'b2b': 0x958, 'b3': 0x959}        # one hide flag per barrier (checked free by trainer_alloc.a
+       CAMPAIGN-FIRST-PLAN.md 184 - RESOLVED (2026-10-28, ROM 0110 build/0110-vr-yellow-hard, owner chose Yellow-hard): tools/vr_barrier_fix.py. Barrier rocks now f
+FLAG 0x958 | tools: victoryroad_yellow.py
+       victoryroad_yellow.py 35 FLAGS = {'b1': 0x956, 'b2a': 0x957, 'b2b': 0x958, 'b3': 0x959}        # one hide flag per barrier (checked free by trainer_alloc.a
+FLAG 0x959 | tools: victoryroad_yellow.py
+       victoryroad_yellow.py 35 FLAGS = {'b1': 0x956, 'b2a': 0x957, 'b2b': 0x958, 'b3': 0x959}        # one hide flag per barrier (checked free by trainer_alloc.a
+       MAP-IDS.md 45 Flags/variables already allocated (never reuse): persistent flags must stay below 0xAA0; used A7D, A7F, A87, A9D, A9E, A9F, Mega 0
+FLAG 0x95A | tools: safari_yellow.py
+       safari_yellow.py 46 BALL_FLAGS = [0x95A, 0x95B, 0x95D, 0x95E, 0x95F, 0x961, 0x962, 0x963, 0x965]       # one per ball placed (9; Egg Bomb and Skull Ba
+FLAG 0x95B | tools: safari_yellow.py
+       safari_yellow.py 46 BALL_FLAGS = [0x95A, 0x95B, 0x95D, 0x95E, 0x95F, 0x961, 0x962, 0x963, 0x965]       # one per ball placed (9; Egg Bomb and Skull Ba
+FLAG 0x95C | tools: mansion_yellow.py
+       mansion_yellow.py 56 BALL_FLAGS = {'ESCAPE_ROPE': 0x954, 'CARBOS': 0x95C, 'CALCIUM': 0x960, 'MAX_POTION': 0x968, 'IRON': 0x970, 'RARE_CANDY': 0x974, 'F
+FLAG 0x95D | tools: safari_yellow.py
+       safari_yellow.py 46 BALL_FLAGS = [0x95A, 0x95B, 0x95D, 0x95E, 0x95F, 0x961, 0x962, 0x963, 0x965]       # one per ball placed (9; Egg Bomb and Skull Ba
+FLAG 0x95E | tools: safari_yellow.py
+       safari_yellow.py 46 BALL_FLAGS = [0x95A, 0x95B, 0x95D, 0x95E, 0x95F, 0x961, 0x962, 0x963, 0x965]       # one per ball placed (9; Egg Bomb and Skull Ba
+FLAG 0x95F | tools: safari_yellow.py
+       safari_yellow.py 46 BALL_FLAGS = [0x95A, 0x95B, 0x95D, 0x95E, 0x95F, 0x961, 0x962, 0x963, 0x965]       # one per ball placed (9; Egg Bomb and Skull Ba
+FLAG 0x960 | tools: audit_flags.py, hideout_items.py, mansion_yellow.py
+       audit_flags.py 1 """Static audit of the project's persistent flags (0x960-0xB5F): flags a script CHECKS (command 32) but no script ever SETS (comma
+       audit_flags.py 14 LOW, HIGH = 0x960, 0xB60
+FLAG 0x961 | tools: safari_yellow.py
+       safari_yellow.py 46 BALL_FLAGS = [0x95A, 0x95B, 0x95D, 0x95E, 0x95F, 0x961, 0x962, 0x963, 0x965]       # one per ball placed (9; Egg Bomb and Skull Ba
+FLAG 0x962 | tools: safari_yellow.py
+       safari_yellow.py 46 BALL_FLAGS = [0x95A, 0x95B, 0x95D, 0x95E, 0x95F, 0x961, 0x962, 0x963, 0x965]       # one per ball placed (9; Egg Bomb and Skull Ba
+FLAG 0x963 | tools: safari_yellow.py
+       safari_yellow.py 46 BALL_FLAGS = [0x95A, 0x95B, 0x95D, 0x95E, 0x95F, 0x961, 0x962, 0x963, 0x965]       # one per ball placed (9; Egg Bomb and Skull Ba
+FLAG 0x965 | tools: safari_yellow.py
+       safari_yellow.py 46 BALL_FLAGS = [0x95A, 0x95B, 0x95D, 0x95E, 0x95F, 0x961, 0x962, 0x963, 0x965]       # one per ball placed (9; Egg Bomb and Skull Ba
+FLAG 0x967 | tools: safari_yellow.py
+       safari_yellow.py 42 GURU_FLAG = 0x967                                          # Surf given (checked free by trainer_alloc.assert_flags_free)
+FLAG 0x968 | tools: hideout_items.py, mansion_yellow.py
+       hideout_items.py 26 # floor -> (item id, name, hide flag): the flags were in no script or actor list of 0077 (the last free ones below 0xAA0 are 0x960
+       mansion_yellow.py 56 BALL_FLAGS = {'ESCAPE_ROPE': 0x954, 'CARBOS': 0x95C, 'CALCIUM': 0x960, 'MAX_POTION': 0x968, 'IRON': 0x970, 'RARE_CANDY': 0x974, 'F
+FLAG 0x970 | tools: hideout_items.py, mansion_yellow.py
+       hideout_items.py 26 # floor -> (item id, name, hide flag): the flags were in no script or actor list of 0077 (the last free ones below 0xAA0 are 0x960
+       mansion_yellow.py 56 BALL_FLAGS = {'ESCAPE_ROPE': 0x954, 'CARBOS': 0x95C, 'CALCIUM': 0x960, 'MAX_POTION': 0x968, 'IRON': 0x970, 'RARE_CANDY': 0x974, 'F
+FLAG 0x974 | tools: hideout_items.py, mansion_yellow.py, title.py
+       hideout_items.py 26 # floor -> (item id, name, hide flag): the flags were in no script or actor list of 0077 (the last free ones below 0xAA0 are 0x960
+       mansion_yellow.py 56 BALL_FLAGS = {'ESCAPE_ROPE': 0x954, 'CARBOS': 0x95C, 'CALCIUM': 0x960, 'MAX_POTION': 0x968, 'IRON': 0x970, 'RARE_CANDY': 0x974, 'F
+FLAG 0x97C | tools: hideout_items.py, mansion_yellow.py, title.py
+       hideout_items.py 26 # floor -> (item id, name, hide flag): the flags were in no script or actor list of 0077 (the last free ones below 0xAA0 are 0x960
+       mansion_yellow.py 56 BALL_FLAGS = {'ESCAPE_ROPE': 0x954, 'CARBOS': 0x95C, 'CALCIUM': 0x960, 'MAX_POTION': 0x968, 'IRON': 0x970, 'RARE_CANDY': 0x974, 'F
+FLAG 0x98C | tools: hideout_items.py, mansion_yellow.py
+       hideout_items.py 26 # floor -> (item id, name, hide flag): the flags were in no script or actor list of 0077 (the last free ones below 0xAA0 are 0x960
+       mansion_yellow.py 57 'TM_BLIZZARD': 0x98C, 'TM_SOLARBEAM': 0x99C, 'SECRET_KEY': 0x9A0}
+FLAG 0x99C | tools: mansion_yellow.py
+       mansion_yellow.py 57 'TM_BLIZZARD': 0x98C, 'TM_SOLARBEAM': 0x99C, 'SECRET_KEY': 0x9A0}
+FLAG 0x9A0 | tools: mansion_yellow.py
+       mansion_yellow.py 57 'TM_BLIZZARD': 0x98C, 'TM_SOLARBEAM': 0x99C, 'SECRET_KEY': 0x9A0}
+FLAG 0x9BB | tools: fly_point_table_fix.py, johto_step2.py, town_map_kanto_first.py
+       fly_point_table_fix.py 3 instead of HeartGold's map 60 (New Bark Town). Walking into Pallet therefore set New Bark's flag 0x9BB, and the function returns a
+       johto_step2.py 4 scripted ring-and-messages scene (the player already has the Pokegear from Mom), sets the Fly point of New Bark Town (pret FLAG_SY
+FLAG 0x9D6 | tools: johto_step3.py, mega_egg.py
+       johto_step3.py 5 (map 143, object 0) at 8 hands over the Mega Stone of the chosen starter (Meganiumite / Feraligite), sets the Mega flag 0x9D6 (the
+       johto_step3.py 18 MEGA_RING, MEGA_FLAG = 696, 0x9D6
+FLAG 0x9D8 | tools: -
+FLAG 0x9EF | tools: hideout_items.py
+       hideout_items.py 28 2: [(81, 'MOON STONE', 0x9EF), (92, 'NUGGET', 0x9F0), (26, 'SUPER POTION', 0x9F1)],
+FLAG 0x9F0 | tools: hideout_items.py
+       hideout_items.py 28 2: [(81, 'MOON STONE', 0x9EF), (92, 'NUGGET', 0x9F0), (26, 'SUPER POTION', 0x9F1)],
+FLAG 0x9F1 | tools: hideout_items.py
+       hideout_items.py 28 2: [(81, 'MOON STONE', 0x9EF), (92, 'NUGGET', 0x9F0), (26, 'SUPER POTION', 0x9F1)],
+FLAG 0x9F3 | tools: hideout_items.py
+       hideout_items.py 29 3: [(50, 'RARE CANDY', 0x9F3)],
+FLAG 0x9F5 | tools: hideout_items.py
+       hideout_items.py 30 4: [(45, 'HP UP', 0x9F5), (47, 'IRON', 0x9F7)]}
+FLAG 0x9F7 | tools: hideout_items.py
+       hideout_items.py 30 4: [(45, 'HP UP', 0x9F5), (47, 'IRON', 0x9F7)]}
+FLAG 0x9F9 | tools: fixture_party.py, hideout_items.py, hideout_yellow.py
+       fixture_party.py 32 for flag in filter(None, os.environ.get('FIXTURE_FLAGS', '').split(',')):      # test-only: set story flags (env FIXTURE_FLAGS=0x9
+       hideout_items.py 26 # floor -> (item id, name, hide flag): the flags were in no script or actor list of 0077 (the last free ones below 0xAA0 are 0x960
+FLAG 0x9FC | tools: hideout_items.py
+       hideout_items.py 26 # floor -> (item id, name, hide flag): the flags were in no script or actor list of 0077 (the last free ones below 0xAA0 are 0x960
+FLAG 0x9FD | tools: hideout_items.py, viridian_gym_yellow.py
+       hideout_items.py 26 # floor -> (item id, name, hide flag): the flags were in no script or actor list of 0077 (the last free ones below 0xAA0 are 0x960
+       viridian_gym_yellow.py 33 REVIVE, REVIVE_FLAG = 28, 0x9FD
+FLAG 0xA1F | tools: tower_items.py
+       tower_items.py 27 BALLS = {3: [(78, 'ESCAPE ROPE', 'POKEMONTOWER3F_ESCAPE_ROPE', 0xA1F)],
+FLAG 0xA20 | tools: tower_items.py
+       tower_items.py 28 4: [(40, 'ELIXIR', 'POKEMONTOWER4F_ELIXER', 0xA20), (21, 'AWAKENING', 'POKEMONTOWER4F_AWAKENING', 0xA23), (45, 'HP UP', 'POKEMONTO
+FLAG 0xA23 | tools: tower_items.py
+       tower_items.py 28 4: [(40, 'ELIXIR', 'POKEMONTOWER4F_ELIXER', 0xA20), (21, 'AWAKENING', 'POKEMONTOWER4F_AWAKENING', 0xA23), (45, 'HP UP', 'POKEMONTO
+FLAG 0xA24 | tools: tower_items.py
+       tower_items.py 28 4: [(40, 'ELIXIR', 'POKEMONTOWER4F_ELIXER', 0xA20), (21, 'AWAKENING', 'POKEMONTOWER4F_AWAKENING', 0xA23), (45, 'HP UP', 'POKEMONTO
+FLAG 0xA25 | tools: tower_items.py
+       tower_items.py 29 5: [(92, 'NUGGET', 'POKEMONTOWER5F_NUGGET', 0xA25)],
+FLAG 0xA27 | tools: tower_items.py
+       tower_items.py 30 6: [(50, 'RARE CANDY', 'POKEMONTOWER6F_RARE_CANDY', 0xA27), (60, 'X ACCURACY', 'POKEMONTOWER6F_X_ACCURACY', 0xA29)]}
+FLAG 0xA29 | tools: tower_items.py
+       tower_items.py 30 6: [(50, 'RARE CANDY', 'POKEMONTOWER6F_RARE_CANDY', 0xA27), (60, 'X ACCURACY', 'POKEMONTOWER6F_X_ACCURACY', 0xA29)]}
+FLAG 0xA2B | tools: hideout_items.py
+       hideout_items.py 27 BALLS = {1: [(78, 'ESCAPE ROPE', 0xA2B), (25, 'HYPER POTION', 0xA2C)],
+FLAG 0xA2C | tools: hideout_items.py
+       hideout_items.py 27 BALLS = {1: [(78, 'ESCAPE ROPE', 0xA2B), (25, 'HYPER POTION', 0xA2C)],
+FLAG 0xA2D | tools: vr_items.py
+       vr_items.py 27 MOLTRES = dict(map=178, species=146, level=50, sprite=1026, flag=0xA2D, text='Gyaoo!')
+FLAG 0xA2F | tools: victoryroad_yellow.py, vr_items.py
+       victoryroad_yellow.py 43 'MAX_REVIVE': (3, 0xA30, 29, 'MAX REVIVE'), 'TM_EXPLOSION': (3, 0xA2F, 391, 'TM64 (EXPLOSION)')}
+       vr_items.py 24 179: ((38, 15), [(29, 'MAX REVIVE', 0xA30), (391, 'TM64 (EXPLOSION)', 0xA2F)])}
+FLAG 0xA30 | tools: victoryroad_yellow.py, vr_items.py
+       victoryroad_yellow.py 43 'MAX_REVIVE': (3, 0xA30, 29, 'MAX REVIVE'), 'TM_EXPLOSION': (3, 0xA2F, 391, 'TM64 (EXPLOSION)')}
+       vr_items.py 24 179: ((38, 15), [(29, 'MAX REVIVE', 0xA30), (391, 'TM64 (EXPLOSION)', 0xA2F)])}
+FLAG 0xA31 | tools: victoryroad_yellow.py, vr_items.py
+       victoryroad_yellow.py 42 BALLS = {'RARE_CANDY': (1, 0xA37, 50, 'RARE CANDY'), 'FULL_HEAL': (2, 0xA35, 27, 'FULL HEAL'), 'GUARD_SPEC': (2, 0xA31, 55, 'GUARD
+       vr_items.py 23 178: ((8, 31), [(27, 'FULL HEAL', 0xA35), (55, 'GUARD SPEC.', 0xA31)]),
+FLAG 0xA35 | tools: victoryroad_yellow.py, vr_items.py
+       victoryroad_yellow.py 42 BALLS = {'RARE_CANDY': (1, 0xA37, 50, 'RARE CANDY'), 'FULL_HEAL': (2, 0xA35, 27, 'FULL HEAL'), 'GUARD_SPEC': (2, 0xA31, 55, 'GUARD
+       vr_items.py 23 178: ((8, 31), [(27, 'FULL HEAL', 0xA35), (55, 'GUARD SPEC.', 0xA31)]),
+FLAG 0xA37 | tools: victoryroad_yellow.py, vr_items.py
+       victoryroad_yellow.py 42 BALLS = {'RARE_CANDY': (1, 0xA37, 50, 'RARE CANDY'), 'FULL_HEAL': (2, 0xA35, 27, 'FULL HEAL'), 'GUARD_SPEC': (2, 0xA31, 55, 'GUARD
+       vr_items.py 22 BALLS = {124: ((46, 58), [(50, 'RARE CANDY', 0xA37)]),
+FLAG 0xA38 | tools: silph_items.py
+       silph_items.py 28 # clone -> (item id, name, hide flag): flags 0xA38-0xA61 were in no script or actor list in 0056
+       silph_items.py 32 4: [(353, 'TM26 (EARTHQUAKE)', 0xA3C), (50, 'RARE CANDY', 0xA39), (48, 'CARBOS', 0xA38)]}
+FLAG 0xA39 | tools: silph_items.py
+       silph_items.py 32 4: [(353, 'TM26 (EARTHQUAKE)', 0xA3C), (50, 'RARE CANDY', 0xA39), (48, 'CARBOS', 0xA38)]}
+FLAG 0xA3C | tools: silph_items.py
+       silph_items.py 32 4: [(353, 'TM26 (EARTHQUAKE)', 0xA3C), (50, 'RARE CANDY', 0xA39), (48, 'CARBOS', 0xA38)]}
+FLAG 0xA3D | tools: silph_items.py
+       silph_items.py 31 3: [(49, 'CALCIUM', 0xA3F), (402, 'TM75 (SWORDS DANCE)', 0xA3D)],
+FLAG 0xA3F | tools: silph_items.py
+       silph_items.py 31 3: [(49, 'CALCIUM', 0xA3F), (402, 'TM75 (SWORDS DANCE)', 0xA3D)],
+FLAG 0xA43 | tools: silph_items.py
+       silph_items.py 30 2: [(46, 'PROTEIN', 0xA45), (45, 'HP UP', 0xA44), (60, 'X ACCURACY', 0xA43)],
+FLAG 0xA44 | tools: silph_items.py
+       silph_items.py 30 2: [(46, 'PROTEIN', 0xA45), (45, 'HP UP', 0xA44), (60, 'X ACCURACY', 0xA43)],
+FLAG 0xA45 | tools: silph_items.py
+       silph_items.py 30 2: [(46, 'PROTEIN', 0xA45), (45, 'HP UP', 0xA44), (60, 'X ACCURACY', 0xA43)],
+FLAG 0xA5B | tools: silph_items.py
+       silph_items.py 29 BALLS = {1: [(25, 'HYPER POTION', 0xA5B), (27, 'FULL HEAL', 0xA5C), (29, 'MAX REVIVE', 0xA5F), (78, 'ESCAPE ROPE', 0xA61)],
+FLAG 0xA5C | tools: silph_items.py
+       silph_items.py 29 BALLS = {1: [(25, 'HYPER POTION', 0xA5B), (27, 'FULL HEAL', 0xA5C), (29, 'MAX REVIVE', 0xA5F), (78, 'ESCAPE ROPE', 0xA61)],
+FLAG 0xA5F | tools: silph_items.py
+       silph_items.py 29 BALLS = {1: [(25, 'HYPER POTION', 0xA5B), (27, 'FULL HEAL', 0xA5C), (29, 'MAX REVIVE', 0xA5F), (78, 'ESCAPE ROPE', 0xA61)],
+FLAG 0xA60 | tools: route2_flash.py
+       route2_flash.py 8 GIVEN=0xA60
+FLAG 0xA61 | tools: silph_items.py
+       silph_items.py 28 # clone -> (item id, name, hide flag): flags 0xA38-0xA61 were in no script or actor list in 0056
+       silph_items.py 29 BALLS = {1: [(25, 'HYPER POTION', 0xA5B), (27, 'FULL HEAL', 0xA5C), (29, 'MAX REVIVE', 0xA5F), (78, 'ESCAPE ROPE', 0xA61)],
+FLAG 0xA63 | tools: route22_rival.py
+       route22_rival.py 17 MAP, DONE, STATE = 27, 0xA63, 0x4177
+FLAG 0xA64 | tools: silph.py
+       silph.py 32 RIVAL_DONE, GIOVANNI_DONE, LAPRAS_GIVEN, MASTER_GIVEN = 0xA8B, 0xA68, 0xA65, 0xA64
+FLAG 0xA65 | tools: silph.py
+       silph.py 32 RIVAL_DONE, GIOVANNI_DONE, LAPRAS_GIVEN, MASTER_GIVEN = 0xA8B, 0xA68, 0xA65, 0xA64
+FLAG 0xA68 | tools: silph.py
+       silph.py 32 RIVAL_DONE, GIOVANNI_DONE, LAPRAS_GIVEN, MASTER_GIVEN = 0xA8B, 0xA68, 0xA65, 0xA64
+FLAG 0xA6B | tools: johto_step1c.py
+       johto_step1c.py 18 ARRIVED = 0xA6B
+FLAG 0xA6C | tools: fuchsia_warden.py, safari_yellow.py
+       fuchsia_warden.py 10 MAP, GIVEN = 481, 0xA6C
+       safari_yellow.py 41 WARDEN_MAP, GOLD_TEETH, HM_SURF, HM_STRENGTH, WARDEN_GIVEN = 481, 877, 422, 423, 0xA6C
+FLAG 0xA6D | tools: rocket_hideout.py
+       rocket_hideout.py 31 HQ_OPEN, JJ_HIDE, GIOVANNI_HIDE = 0xA70, 0xA71, 0xA6D
+FLAG 0xA70 | tools: rocket_hideout.py
+       rocket_hideout.py 31 HQ_OPEN, JJ_HIDE, GIOVANNI_HIDE = 0xA70, 0xA71, 0xA6D
+FLAG 0xA71 | tools: rocket_hideout.py
+       rocket_hideout.py 31 HQ_OPEN, JJ_HIDE, GIOVANNI_HIDE = 0xA70, 0xA71, 0xA6D
+FLAG 0xA73 | tools: tower_scenes.py
+       tower_scenes.py 19 RIVAL_DONE, JJ_HIDE, FUJI_FLAG = 0xA77, 0xA75, 0xA73
+       CAMPAIGN-FIRST-PLAN.md 122 - Tower: 2F rival, 6F ghost gate, 7F Jessie/James, Fuji house visit deferred (flute given on 7F directly, flag 0xA73).
+FLAG 0xA74 | tools: tower_scenes.py
+       tower_scenes.py 21 GHOST_DONE = 0xA74
+FLAG 0xA75 | tools: tower_scenes.py
+       tower_scenes.py 19 RIVAL_DONE, JJ_HIDE, FUJI_FLAG = 0xA77, 0xA75, 0xA73
+FLAG 0xA77 | tools: tower_scenes.py
+       tower_scenes.py 19 RIVAL_DONE, JJ_HIDE, FUJI_FLAG = 0xA77, 0xA75, 0xA73
+FLAG 0xA79 | tools: ss_anne_rival.py
+       ss_anne_rival.py 12 HIDE=0xA79
+FLAG 0xA7B | tools: ss_anne_rival.py
+       ss_anne_rival.py 11 DONE=0xA7B
+FLAG 0xA7D | tools: ss_anne_departure.py
+       ss_anne_departure.py 11 DEPARTED=0xA7D
+       ss_anne_departure.py 38 audit=json.loads(Path('yellow-heartgold/build/0031-source-audit-v1/audit.json').read_text());assert audit['candidate_departure_fla
+FLAG 0xA7E | tools: pewter_escort_speed.py
+       pewter_escort_speed.py 5 - The hide flag 0xA7E (switched off, not deleted: his actor, script and position stay in the map) is set by the map-load script on
+       pewter_escort_speed.py 6 0xA7E was unused in every script bank and actor list of the ROM and in the tools (checked 2026-11-03).
+FLAG 0xA7F | tools: ss_anne_captain.py, ss_anne_departure.py
+       ss_anne_captain.py 8 GIVEN=0xA7F
+       ss_anne_departure.py 10 CUT_GIVEN=0xA7F
+FLAG 0xA80 | tools: cerulean_bike.py, save_compatibility.py
+       cerulean_bike.py 13 RECEIVED=0xA80
+       save_compatibility.py 113 '''+flag_or(0xA80)+'''next_item:
+FLAG 0xA81 | tools: cerulean.py, save_compatibility.py
+       cerulean.py 17 RIVAL_DONE=0xA81
+       save_compatibility.py 121 '''+flag_or(0xA81)+flag_or(0xA82)+'''marked:
+FLAG 0xA82 | tools: cerulean.py, save_compatibility.py
+       cerulean.py 18 RIVAL_HIDE=0xA82
+       save_compatibility.py 121 '''+flag_or(0xA81)+flag_or(0xA82)+'''marked:
+FLAG 0xA83 | tools: cerulean.py
+       cerulean.py 19 BULBA_GIVEN=0xA83
+FLAG 0xA84 | tools: cerulean.py
+       cerulean.py 20 BULBA_HIDE=0xA84
+FLAG 0xA85 | tools: cerulean.py
+       cerulean.py 21 THIEF_BEAT=0xA85
+FLAG 0xA86 | tools: cerulean.py
+       cerulean.py 22 THIEF_HIDE=0xA86
+FLAG 0xA87 | tools: vermilion_jenny.py
+       vermilion_jenny.py 8 GIVEN=0xA87
+FLAG 0xA88 | tools: cerulean.py
+       cerulean.py 23 POLICE_HIDE=0xA88
+FLAG 0xA89 | tools: cerulean.py, save_compatibility.py
+       cerulean.py 24 MISTY_TM=0xA89
+       save_compatibility.py 108 '''+flag_or(0xA89)+'''b next_item
+FLAG 0xA8A | tools: cerulean.py
+       cerulean.py 28 CAVE_HIDE=0xA8A
+FLAG 0xA8B | tools: save_compatibility.py, silph.py
+       save_compatibility.py 14 RECOVERED = 0xA8B
+       silph.py 32 RIVAL_DONE, GIOVANNI_DONE, LAPRAS_GIVEN, MASTER_GIVEN = 0xA8B, 0xA68, 0xA65, 0xA64
+FLAG 0xA8C | tools: player_pc.py
+       player_pc.py 101 s.emit(32,0xA8C).jump('friendship_ready',1)
+       player_pc.py 105 s.label(f'friendship_slot_{i}').emit(41,item_var,121).emit(41,qty_var,1).emit(30,0xA8C).jump('friendship_ready')
+FLAG 0xA8D | tools: route24.py
+       route24.py 16 NUGGET_GIVEN,ROCKET_BEAT,CHARMANDER_GIVEN,TM_TAKEN,ROUTE_REFRESHED,BLUE_REFRESHED=range(0xA8D,0xA93)
+FLAG 0xA8E | tools: -
+FLAG 0xA8F | tools: -
+FLAG 0xA90 | tools: -
+FLAG 0xA91 | tools: -
+FLAG 0xA92 | tools: -
+FLAG 0xA93 | tools: mtmoon_corrections.py, route24.py
+       mtmoon_corrections.py 15 REFRESHED=0xA93
+       route24.py 16 NUGGET_GIVEN,ROCKET_BEAT,CHARMANDER_GIVEN,TM_TAKEN,ROUTE_REFRESHED,BLUE_REFRESHED=range(0xA8D,0xA93)
+FLAG 0xA94 | tools: route25.py
+       route25.py 16 ROUTE_REFRESHED,TM_TAKEN,SEPARATED,TICKET_GIVEN,HOUSE_REFRESHED,HIDE_MON,HIDE_EMERGING,HIDE_BILL=range(0xA94,0xA9C)
+FLAG 0xA95 | tools: -
+FLAG 0xA96 | tools: -
+FLAG 0xA97 | tools: -
+FLAG 0xA98 | tools: -
+FLAG 0xA99 | tools: -
+FLAG 0xA9A | tools: -
+FLAG 0xA9B | tools: -
+FLAG 0xA9C | tools: cerulean_robbery.py, route25.py
+       cerulean_robbery.py 14 SPAWN_HIDE, SCENE = 0xA9C, 0x414D
+       route25.py 16 ROUTE_REFRESHED,TM_TAKEN,SEPARATED,TICKET_GIVEN,HOUSE_REFRESHED,HIDE_MON,HIDE_EMERGING,HIDE_BILL=range(0xA94,0xA9C)
+FLAG 0xA9D | tools: saffron_gates.py
+       saffron_gates.py 7 DRINK_GIVEN=0xA9D
+       CAMPAIGN-FIRST-PLAN.md 208 - 2026-11-03 BLOCKER (priority 1, found by the owner at Lavender, confirmed by dumping events of ROM 0168): there is NO way from L
+FLAG 0xA9E | tools: vermilion_fan_club.py
+       vermilion_fan_club.py 10 VOUCHER_GIVEN=0xA9E  # Persistent native-unused flag; below daily reset range 0xAA0.
+FLAG 0xA9F | tools: vermilion_old_rod.py
+       vermilion_old_rod.py 10 ROD_GIVEN=0xA9F  # Kanto-only persistent flag, not Johto's shared 0x75.
+FLAG 0xB20 | tools: start_supplies.py
+       start_supplies.py 2 1. The bedroom (map 506) no longer has the Eonite item ball (actor script 5, flag 0xB20): the owner now edits starting items with 
+FLAG 0xB22 | tools: pewter_gym.py, save_compatibility.py
+       pewter_gym.py 18 TM_GIVEN = 0xB22
+       save_compatibility.py 104 '''+flag_or(0xB22)+'''b next_item
+FLAG 0xB23 | tools: pewter_entry_fix.py, pewter_museum.py
+       pewter_entry_fix.py 2 Cause: Pewter's entry script (level-script type 2, script 11 of bank a/0/1/2 file 1098) is `clearflag 0xB23; check_badge 8 -> VAR_
+       pewter_museum.py 9 TICKET=0xB23
+FLAG 0xB24 | tools: pewter_museum.py
+       pewter_museum.py 10 AMBER=0xB24
+FLAG 0xB25 | tools: forest_progression.py
+       forest_progression.py 14 ITEM_FLAGS=(0xB25,0xB26,0xB27,800+85,800+87,0xB2A,0xB2B)
+FLAG 0xB26 | tools: forest_progression.py
+       forest_progression.py 14 ITEM_FLAGS=(0xB25,0xB26,0xB27,800+85,800+87,0xB2A,0xB2B)
+FLAG 0xB27 | tools: forest_progression.py
+       forest_progression.py 14 ITEM_FLAGS=(0xB25,0xB26,0xB27,800+85,800+87,0xB2A,0xB2B)
+FLAG 0xB2A | tools: forest_progression.py
+       forest_progression.py 14 ITEM_FLAGS=(0xB25,0xB26,0xB27,800+85,800+87,0xB2A,0xB2B)
+FLAG 0xB2B | tools: forest_progression.py
+       forest_progression.py 14 ITEM_FLAGS=(0xB25,0xB26,0xB27,800+85,800+87,0xB2A,0xB2B)
+FLAG 0xB2C | tools: -
+       MAP-IDS.md 50 Known trainer id blocks (from the dump): Mt. Moon 1F 766-772 (7 trainers; Yellow's B1F has none, B2F has 4 Rockets/fossil Super Ne
+FLAG 0xB2D | tools: -
+FLAG 0xB2E | tools: -
+FLAG 0xB2F | tools: -
+FLAG 0xB30 | tools: -
+       MAP-IDS.md 50 Known trainer id blocks (from the dump): Mt. Moon 1F 766-772 (7 trainers; Yellow's B1F has none, B2F has 4 Rockets/fossil Super Ne
+FLAG 0xB31 | tools: -
+FLAG 0xB32 | tools: -
+FLAG 0xB33 | tools: mtmoon_blockade.py, mtmoon_rockets.py, mtmoon_yellow.py
+       mtmoon_blockade.py 23 HIDE_J, HIDE_M, JESSIE, JAMES = 0xB33, 0xB34, 30, 31
+       mtmoon_rockets.py 19 HIDE_JESSIE=0xB33
+FLAG 0xB34 | tools: mtmoon_blockade.py, mtmoon_rockets.py, mtmoon_yellow.py
+       mtmoon_blockade.py 23 HIDE_J, HIDE_M, JESSIE, JAMES = 0xB33, 0xB34, 30, 31
+       mtmoon_rockets.py 20 HIDE_JAMES=0xB34
+FLAG 0xB35 | tools: mtmoon_items.py, mtmoon_yellow.py
+       mtmoon_items.py 11 dict(map=107,actor=24,item=45,name='HP UP',flag=0xB35,x=24,z=21),
+       mtmoon_yellow.py 203 for o, p in zip([o for o in objs if o['item']], [dict(item=45, name='HP UP', flag=0xB35, actor=24), dict(item=117, name='TM01 (MEG
+FLAG 0xB36 | tools: mtmoon_items.py, mtmoon_yellow.py
+       mtmoon_items.py 12 dict(map=107,actor=25,item=116,name='TM12 (WATER GUN)',flag=0xB36,x=3,z=4),
+       mtmoon_yellow.py 189 water_gun = dict(item=116, name='TM12 (WATER GUN)', flag=0xB36, actor=25)
+FLAG 0xB37 | tools: mtmoon_center.py
+       mtmoon_center.py 12 SOLD=0xB37
+FLAG 0xB38 | tools: mtmoon_items.py, mtmoon_yellow.py
+       mtmoon_items.py 13 dict(map=448,actor=26,item=117,name='TM01 (MEGA PUNCH)',flag=0xB38,x=7,z=6),
+       mtmoon_yellow.py 203 for o, p in zip([o for o in objs if o['item']], [dict(item=45, name='HP UP', flag=0xB35, actor=24), dict(item=117, name='TM01 (MEG
+FLAG 0xB39 | tools: route4.py, route4_save_refresh.py
+       route4.py 14 ITEM_FLAG=0xB39
+       route4_save_refresh.py 65 s.emit(100,1).emit(32,0xB39).jump('item_collected',1).emit(100,3).label('item_collected').emit(30,MIGRATED).label('done').emit(41,
+FLAG 0xB3A | tools: route4_save_refresh.py
+       route4_save_refresh.py 9 MIGRATED=0xB3A
+FLAG 0xB3B | tools: player_pc.py
+       player_pc.py 94 s.label('charm').emit(32,0xB3B).jump('boot',1)
+       player_pc.py 98 s.label(f'charm_slot_{i}').emit(41,item_var,114).emit(41,qty_var,1).emit(30,0xB3B).jump('boot')
+FLAG 0xB3F | tools: progression_cleanup.py
+       progression_cleanup.py 17 RIVAL_FEMALE=0xB3F
+FLAG 0xB40 | tools: progression_cleanup.py
+       progression_cleanup.py 16 RIVAL_DUCK=0xB40
+FLAG 0xB41 | tools: progression_cleanup.py
+       progression_cleanup.py 15 RIVAL_PICKED=0xB41
+FLAG 0xB42 | tools: progression_cleanup.py
+       progression_cleanup.py 14 R22_MIGRATED=0xB42
+FLAG 0xB43 | tools: progression_cleanup.py, save_compatibility.py
+       progression_cleanup.py 13 R22_HIDE=0xB43
+       save_compatibility.py 85 for f in (0xB4F,0xB4C,0xB54,0xB43,0xB44):
+FLAG 0xB44 | tools: progression_cleanup.py, save_compatibility.py
+       progression_cleanup.py 12 R22_DONE=0xB44
+       save_compatibility.py 85 for f in (0xB4F,0xB4C,0xB54,0xB43,0xB44):
+FLAG 0xB45 | tools: adventure_ready.py, save_compatibility.py
+       adventure_ready.py 14 GEAR_REWARD=0xB45
+       save_compatibility.py 54 '''+flag_or(0xB45)+'''
+FLAG 0xB46 | tools: adventure_ready.py, save_compatibility.py
+       adventure_ready.py 13 WEST_HIDE=0xB46
+       save_compatibility.py 69 0xB58,0xB59,0xB5A,0xB5E,0xB5F,0xB46):
+FLAG 0xB47 | tools: adventure_ready.py, save_compatibility.py
+       adventure_ready.py 12 WORLD_MIGRATED=0xB47
+       save_compatibility.py 90 s += flag_or(0xB4E,clear=True)+flag_or(0xB47,clear=True)
+FLAG 0xB4B | tools: opening_corrections.py
+       opening_corrections.py 14 GATE_MIGRATED=0xB4B
+FLAG 0xB4C | tools: save_compatibility.py, viridian_tutorial.py
+       save_compatibility.py 85 for f in (0xB4F,0xB4C,0xB54,0xB43,0xB44):
+       viridian_tutorial.py 27 BLOCKER_HIDE=0xB4C
+FLAG 0xB4D | tools: save_compatibility.py, viridian_tutorial.py
+       save_compatibility.py 87 s += flag_or(0xB4D,clear=True)
+       viridian_tutorial.py 28 PASSED_HIDE=0xB4D
+FLAG 0xB4E | tools: save_compatibility.py, viridian_tutorial.py
+       save_compatibility.py 90 s += flag_or(0xB4E,clear=True)+flag_or(0xB47,clear=True)
+       viridian_tutorial.py 26 CITY_MIGRATED=0xB4E
+FLAG 0xB4F | tools: save_compatibility.py, viridian_tutorial.py
+       save_compatibility.py 85 for f in (0xB4F,0xB4C,0xB54,0xB43,0xB44):
+       viridian_tutorial.py 23 TUTORIAL_DONE=0xB4F
+FLAG 0xB50 | tools: save_compatibility.py, viridian_tutorial.py
+       save_compatibility.py 68 for f in (0x6A,0x6B,0xB52,0xB50,0xB53,0xB55,0xB56,0xB57,
+       viridian_tutorial.py 24 DEX_HIDE=0xB50
+FLAG 0xB51 | tools: viridian_tutorial.py
+       viridian_tutorial.py 25 LAB_MIGRATED=0xB51
+FLAG 0xB52 | tools: parcel_quest.py, save_compatibility.py
+       parcel_quest.py 27 QUEST_INIT=0xB52
+       save_compatibility.py 68 for f in (0x6A,0x6B,0xB52,0xB50,0xB53,0xB55,0xB56,0xB57,
+FLAG 0xB53 | tools: parcel_quest.py, save_compatibility.py
+       parcel_quest.py 20 BALLS_GIVEN=0xB53
+       save_compatibility.py 68 for f in (0x6A,0x6B,0xB52,0xB50,0xB53,0xB55,0xB56,0xB57,
+FLAG 0xB54 | tools: parcel_quest.py, save_compatibility.py
+       parcel_quest.py 26 GUIDE_HIDE=0xB54
+       save_compatibility.py 85 for f in (0xB4F,0xB4C,0xB54,0xB43,0xB44):
+FLAG 0xB55 | tools: parcel_quest.py, save_compatibility.py
+       parcel_quest.py 25 CLERK_HIDE=0xB55
+       save_compatibility.py 68 for f in (0x6A,0x6B,0xB52,0xB50,0xB53,0xB55,0xB56,0xB57,
+FLAG 0xB56 | tools: bedroom_pc_script.py, parcel_quest.py, save_compatibility.py
+       bedroom_pc_script.py 21 POTION_WITHDRAWN_FLAG = 0xB56    # reserved only for new bedroom PC
+       parcel_quest.py 24 BLUE_HIDE=0xB56
+FLAG 0xB57 | tools: bedroom_pc_script.py, parcel_quest.py, save_compatibility.py
+       bedroom_pc_script.py 22 CANDIES_WITHDRAWN_FLAG = 0xB57   # reserved only for new bedroom PC
+       parcel_quest.py 23 MOM_HIDE=0xB57
+FLAG 0xB58 | tools: escort.py, save_compatibility.py
+       escort.py 26 HIDE_CAPTURE_BALL = 0xB58
+       save_compatibility.py 69 0xB58,0xB59,0xB5A,0xB5E,0xB5F,0xB46):
+FLAG 0xB59 | tools: escort.py, save_compatibility.py
+       escort.py 25 HIDE_WILD_DUCK = 0xB59
+       save_compatibility.py 69 0xB58,0xB59,0xB5A,0xB5E,0xB5F,0xB46):
+FLAG 0xB5A | tools: escort.py, save_compatibility.py
+       escort.py 24 HIDE_ESCORT_OAK = 0xB5A
+       save_compatibility.py 69 0xB58,0xB59,0xB5A,0xB5E,0xB5F,0xB46):
+FLAG 0xB5B | tools: opening.py
+       opening.py 24 POTION_GIVEN = 0xB5B
+FLAG 0xB5C | tools: opening.py, save_compatibility.py
+       opening.py 22 HIDE_LAB_OAK = 0xB5C
+       save_compatibility.py 71 s += flag_or(0xB5C,clear=True)
+FLAG 0xB5E | tools: opening.py, save_compatibility.py
+       opening.py 21 HIDE_TOWN_OAK = 0xB5E
+       save_compatibility.py 69 0xB58,0xB59,0xB5A,0xB5E,0xB5F,0xB46):
+FLAG 0xB5F | tools: audit_flags.py, opening.py, save_compatibility.py
+       audit_flags.py 1 """Static audit of the project's persistent flags (0x960-0xB5F): flags a script CHECKS (command 32) but no script ever SETS (comma
+       opening.py 23 HIDE_RIVAL = 0xB5F
+VAR 0x4059 | tools: silph_yellow.py
+       silph_yellow.py 41 DOOR_FLAGS = list(range(0x4059, 0x4059 + 20))
+VAR 0x405A | tools: -
+VAR 0x405B | tools: -
+VAR 0x405C | tools: -
+VAR 0x405D | tools: -
+VAR 0x405E | tools: -
+VAR 0x405F | tools: -
+VAR 0x4060 | tools: -
+VAR 0x4061 | tools: -
+VAR 0x4062 | tools: -
+VAR 0x4063 | tools: -
+VAR 0x4064 | tools: -
+VAR 0x4065 | tools: -
+VAR 0x4066 | tools: -
+VAR 0x4067 | tools: -
+VAR 0x4068 | tools: -
+VAR 0x4069 | tools: -
+VAR 0x406A | tools: -
+VAR 0x406B | tools: -
+VAR 0x406C | tools: -
+VAR 0x406D | tools: fixture_party.py, mansion_yellow.py
+       fixture_party.py 42 for pair in filter(None, os.environ.get('FIXTURE_VARS', '').split(',')):         # test-only: set script variables (env FIXTURE_VA
+       mansion_yellow.py 59 SWITCH_VAR, HIDDEN_VARS, TRIGGER_VAR = 0x406D, {3: 0x406E, 4: 0x406F}, 0x4179     # the trigger var is never written (stays 0)
+VAR 0x406E | tools: mansion_yellow.py, npcpos_probe.py
+       mansion_yellow.py 59 SWITCH_VAR, HIDDEN_VARS, TRIGGER_VAR = 0x406D, {3: 0x406E, 4: 0x406F}, 0x4179     # the trigger var is never written (stays 0)
+       npcpos_probe.py 1 """TEST ONLY: Vermilion Center gets an NPC (object 9, tile 8,14) and a step trigger at the arrival tile that runs 'cmd 106: GetNPC
+VAR 0x406F | tools: mansion_yellow.py, npcpos_probe.py
+       mansion_yellow.py 59 SWITCH_VAR, HIDDEN_VARS, TRIGGER_VAR = 0x406D, {3: 0x406E, 4: 0x406F}, 0x4179     # the trigger var is never written (stays 0)
+       npcpos_probe.py 1 """TEST ONLY: Vermilion Center gets an NPC (object 9, tile 8,14) and a step trigger at the arrival tile that runs 'cmd 106: GetNPC
+VAR 0x4128 | tools: johto_step1b.py, johto_step2.py, johto_step3.py, johto_step3c.py, town_map_kanto_first.py
+       johto_step1b.py 92 print(patch(rom, 0x4128))                                     # the variable johto_step1.py allocated
+       johto_step2.py 66 def patch(rom, var=0x4128):
+VAR 0x413C | tools: johto_step3c.py
+       johto_step3c.py 225 s3.mr_pokemon_scene(rom, 0x4128, 0x413C, (s3.STONES[0], (STONE, 'TYPHLOSIONITE'), s3.STONES[2]))
+VAR 0x413D | tools: -
+VAR 0x413E | tools: -
+VAR 0x4140 | tools: mtmoon_story.py, mtmoon_yellow.py
+       mtmoon_story.py 20 STAGE = 0x4140  # 0: battle pending; 1: choose fossil; 2: fossil chosen; 3: Rockets beaten.
+       mtmoon_yellow.py 31 STAGE, CHOICE = 0x4140, 0x4141
+VAR 0x4141 | tools: mtmoon_story.py, mtmoon_yellow.py
+       mtmoon_story.py 21 CHOICE = 0x4141  # 1: Dome; 2: Helix. These saved vars are unused by native HG scripts.
+       mtmoon_yellow.py 31 STAGE, CHOICE = 0x4140, 0x4141
+VAR 0x4152 | tools: player_pc.py, var_probe.py
+       player_pc.py 9 SLOTS = [(0x4152+2*i, 0x4153+2*i) for i in range(10)]
+       var_probe.py 15 VARS = {0x4152: 0x1357, 0x4178: 0x3579, 0x41A0: 0x4680, 0x41F0: 0x5791, 0x4210: 0x68A2, 0x4250: 0x79B3}
+VAR 0x4153 | tools: player_pc.py
+       player_pc.py 9 SLOTS = [(0x4152+2*i, 0x4153+2*i) for i in range(10)]
+VAR 0x4154 | tools: -
+VAR 0x4155 | tools: -
+VAR 0x4156 | tools: -
+VAR 0x4157 | tools: -
+VAR 0x4158 | tools: -
+VAR 0x4159 | tools: -
+VAR 0x415A | tools: -
+VAR 0x415B | tools: -
+VAR 0x415C | tools: -
+VAR 0x415D | tools: -
+VAR 0x415E | tools: -
+VAR 0x415F | tools: -
+VAR 0x4160 | tools: -
+VAR 0x4161 | tools: -
+VAR 0x4162 | tools: -
+VAR 0x4163 | tools: -
+VAR 0x4164 | tools: -
+VAR 0x4165 | tools: -
+       MAP-IDS.md 45 Flags/variables already allocated (never reuse): persistent flags must stay below 0xAA0; used A7D, A7F, A87, A9D, A9E, A9F, Mega 0
+VAR 0x4166 | tools: player_pc.py
+       player_pc.py 10 INIT = 0x4166
+VAR 0x4167 | tools: player_pc.py
+       player_pc.py 11 EVOLUTION_INIT = 0x4167
+VAR 0x4168 | tools: escort.py, save_compatibility.py
+       escort.py 65 s.emit(41, 0x4168, 1)
+       save_compatibility.py 66 for v, n in ((0x4169,1),(0x416A,2),(0x416D,2),(0x416F,2),(0x416E,2),(0x4168,1)):
+VAR 0x4169 | tools: parcel_quest.py, save_compatibility.py
+       parcel_quest.py 17 SHOES_STATE=0x4169
+       save_compatibility.py 66 for v, n in ((0x4169,1),(0x416A,2),(0x416D,2),(0x416F,2),(0x416E,2),(0x4168,1)):
+VAR 0x416A | tools: live_core.py, mart_clerks.py, parcel_quest.py, save_compatibility.py
+       live_core.py 136 parcel=struct.unpack_from('<H',ram,state+2*(0x416A-0x4000))[0]
+       mart_clerks.py 5 - a talking clerk: its script entry is re-pointed to the new vendor (the native talk script stays as dead code), or in the Viridia
+VAR 0x416B | tools: escort.py, fixture_party.py, mega_starter.py, parcel_quest.py, starter_properties.py
+       escort.py 98 s.emit(41,0x416B,2).emit(1).emit(41,0x416B,0)
+       escort.py 150 s.label('received').emit(41, 0x416B, 1).emit(1).emit(41, 0x416B, 0)
+VAR 0x416D | tools: opening.py, parcel_quest.py, save_compatibility.py
+       opening.py 370 groups[3] = [trigger(4, 1024, ROUTE_GATE_Z, 32, 0x416D, 0)]
+       opening.py 424 'route_boundary':0x416D,'potion_received':POTION_GIVEN,
+VAR 0x416E | tools: opening.py, save_compatibility.py
+       opening.py 19 RIVAL_STATE = 0x416E
+       save_compatibility.py 66 for v, n in ((0x4169,1),(0x416A,2),(0x416D,2),(0x416F,2),(0x416E,2),(0x4168,1)):
+VAR 0x416F | tools: opening.py, save_compatibility.py
+       opening.py 18 OAK_STATE = 0x416F
+       save_compatibility.py 66 for v, n in ((0x4169,1),(0x416A,2),(0x416D,2),(0x416F,2),(0x416E,2),(0x4168,1)):
+VAR 0x4171 | tools: tower_scenes.py
+       tower_scenes.py 20 RIVAL_STATE, JJ_STATE, GHOST_STATE = 0x4171, 0x4172, 0x4173     # no native script or actor references any of them
+VAR 0x4172 | tools: tower_scenes.py
+       tower_scenes.py 20 RIVAL_STATE, JJ_STATE, GHOST_STATE = 0x4171, 0x4172, 0x4173     # no native script or actor references any of them
+VAR 0x4173 | tools: tower_scenes.py
+       tower_scenes.py 20 RIVAL_STATE, JJ_STATE, GHOST_STATE = 0x4171, 0x4172, 0x4173     # no native script or actor references any of them
+VAR 0x4174 | tools: rocket_hideout.py
+       rocket_hideout.py 32 JJ_STATE = 0x4174
+VAR 0x4176 | tools: silph.py, silph_yellow.py
+       silph.py 33 RIVAL_STATE = 0x4176                            # 0x4175 collides with bytes in an unrelated script bank
+       silph_yellow.py 159 if tstate == 0x4176:                       # the rival's ambush: a 5x5 square of steps around him
+VAR 0x4177 | tools: route22_rival.py
+       route22_rival.py 17 MAP, DONE, STATE = 27, 0xA63, 0x4177
