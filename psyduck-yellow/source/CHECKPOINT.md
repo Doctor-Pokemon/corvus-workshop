@@ -1,8 +1,8 @@
-# CHECKPOINT (Celadon Game Corner reachable = ROM 0171; 2026-11-03)
-Newest ROM: build/0171-game-corner/s.nds = 0170 + tools/celadon_game_corner.py (SHA-256 05a4f6f5be8d...). Copy for the owner: downloads/"Pokemon Psyduck Yellow 0-1-6-8.nds" (same name as the SD card file and the CBC CIA). Published BETA 0.1.6.8 on Doctor-Pokemon is still the 0170 build, not this one.
-Area: the Celadon Game Corner (map 381: Rocket guard, poster to the Hideout) had NO door from the street (base game too): the street door (1218,249) led to Mr. Game's room (537). Owner chose the layout from photos.
-Now: left street door (1218,249) -> Game Corner (it already exits there); right street door (1223,249) -> Mr. Game's room (south door); new door in the middle of Mr. Game's north wall (tile 7,2 = 0x8069 door tile, own chunk/matrix copy because chunk 381 is shared with map 536) -> Prize room south door; the Prize room's south door -> landing tile (7,3) in Mr. Game's room. The Prize room has no street door.
-Tested (emulator fixture, not a campaign playthrough): left door -> Game Corner (10,16) and out; red door -> Mr. Game -> walked round the table -> north door -> Prize room (4,7) -> back to (7,3..4) -> left/right free -> out the red door. 
-To test on the 3DS: walk into the left Celadon building with the blue arch (Game Corner), then the right one with the red door (Mr. Game), walk to the picture in the middle of its north wall, step up into it, and come back down.
-Known gaps: the north wall still shows the picture, no door art; the Prize room's counter/clerk and Mr. Game's Coin Case flow not re-checked in play; Hideout Lift Key/elevator deferred; not tried on real hardware.
-Next: Rocket Hideout -> Silph Scope -> drink -> Pokemon Tower; Cycling Road unchecked; polish list in the plan file.
+# CHECKPOINT (Rocket Hideout spinner arrows visible = ROM 0172; 2026-11-03)
+Newest ROM: build/0172-hideout-arrows/s.nds = 0171 + tools/hideout_arrows.py (SHA-256 6671c12982b9...). Copy for the owner: downloads/"Pokemon Psyduck Yellow 0-1-6-8.nds" (not yet on the SD card; the published BETA 0.1.6.8 is still the 0170/0171 build).
+Area: Rocket Hideout B2F/B3F spinner mazes. The slide triggers existed since 0099 but the floor under them was plain, so the owner could not see the arrows or their direction.
+Now: every arrow tile (a 2x2 block) has a flat red pad with a white arrow pointing the way the slide starts (first move of pokeyellow's own list): 43 arrows on B2F (16 up, 6 down, 12 left, 9 right), 16 on B3F (5 up, 2 down, 1 left, 8 right). Four new textures/materials appended to the floors' texture banks; the stored floor models (with the stair pads) and the bank are regenerated and compared byte for byte before any change.
+Tested (emulator fixture): screenshots of B2F and B3F show the arrows; stepping onto B2F's right arrow slid the player from (26,41) to (34,42).
+To test on the 3DS: go down the Hideout to B2F/B3F: look for the red pads; step on one and check the push matches its arrow.
+Known gaps: the Lift Key/elevator, the Hideout item balls and TM balls are still deferred; Game Corner slot machines hang when pressed (see the plan file: do not press A on them); not tried on real hardware.
+Next: Silph Scope -> Tower; Game Corner machine stub; Cycling Road unchecked; polish list in the plan file.

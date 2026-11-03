@@ -1341,10 +1341,11 @@ Reported, not fixed: the top screen sometimes turns black in the overworld (a sa
 
 **BETA, FOR TESTING ONLY. Not a complete game. The Kanto campaign is built; the first parts of the Johto postgame are built but Johto is unfinished and has not been played through.**
 
-[Create BETA 0.1.6.8](https://raw.githack.com/Doctor-Pokemon/Psyduck-Yellow-Releases/main/prototype-0168b/index.html). It builds from your original USA HeartGold file in your browser; nothing is uploaded. The finished game is named "Pokemon Psyduck Yellow 0-1-6-8.nds".
+[Create BETA 0.1.6.8](https://raw.githack.com/Doctor-Pokemon/Psyduck-Yellow-Releases/main/prototype-0168c/index.html). It builds from your original USA HeartGold file in your browser; nothing is uploaded. The finished game is named "Pokemon Psyduck Yellow 0-1-6-8.nds".
 
-What changed since 0.1.61 (internal builds 0162–0171):
+What changed since 0.1.61 (internal builds 0162–0172):
 - **Replaces BETA 0.1.61.** Use 0.1.6.8: it also opens the way from Lavender Town to Celadon, and from Celadon's streets into the Game Corner and the Rocket Hideout, which 0.1.61 left closed.
+- **Rocket Hideout (new):** the spinner (arrow) tiles on B2F and B3F now show a red pad with a white arrow pointing the way each one pushes you, so the mazes can be read.
 - **Celadon City (new):** the Game Corner (with the Rocket guard and the poster to the Rocket Hideout) now has a door from the street: the blue arched door. Mr. Game's room moved behind the red door next to it, and a door in the middle of his north wall leads to the Prize Redemption room, whose south door leads back.
 - **Route 7 / Route 8 tunnel (new):** the sealed Underground Path doors on Route 8 (east of the Saffron gatehouse) and Route 7 now lead to each other, so you can get from Lavender Town to Celadon City before Saffron opens. This is a plain door-to-door shortcut with no tunnel interior yet. The old notice on Route 7 still says the path is sealed.
 - **Lavender Town:** the Radio Tower door leads straight to Pokémon Tower 1F and its sign reads like Yellow's Pokémon Tower sign; both go back to the Radio Tower after your first Hall of Fame.
@@ -1354,4 +1355,4 @@ What changed since 0.1.61 (internal builds 0162–0171):
 - **Vermilion Gym:** the sign now reads "The Lightning Unovan".
 - Not changed: the save layout.
 
-Reported, not fixed: the top screen sometimes turns black in the overworld (a save and reload fixes it); cut-off move descriptions on the summary Moves page; the Lavender building's outside picture; a freeze when arriving in Cerulean after Route 25 (not reproduced); the Union Room. Checked: small emulator tests on prepared saves (see the read-me). Source to rebuild this version: [{SOURCE_URL}]({SOURCE_URL}).
+Reported, not fixed: pressing A on a Celadon Game Corner slot machine hangs the game (the games are not built; do not use them); the top screen sometimes turns black in the overworld (a save and reload fixes it); cut-off move descriptions on the summary Moves page; the Lavender building's outside picture; a freeze when arriving in Cerulean after Route 25 (not reproduced); the Union Room. Checked: small emulator tests on prepared saves (see the read-me). Source to rebuild this version: [{SOURCE_URL}]({SOURCE_URL}).
