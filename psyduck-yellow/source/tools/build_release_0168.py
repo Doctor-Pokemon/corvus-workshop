@@ -1,7 +1,7 @@
 """Build the public prototype-0168 (BETA 0.1.6.8) release inside the Psyduck-Yellow-Releases repo (patches and documentation only; never a ROM, save or source).
 
 Same layout as build_release_0161.py: a self-contained prototype-0168 folder (the four older patch stages, the new final stage 0039 art -> 0168, the page, manifest and read-me),
-the repository README and the development log. The page is derived from prototype-0161's. The shipped ROM is build 0170 (0168 plus the Route 7/8 tunnel fix; the owner calls it 0168).
+the repository README and the development log. The page is derived from prototype-0161's. The shipped ROM is build 0171 (0168 plus the Route 7/8 tunnel fix and the Celadon Game Corner doors; the owner calls it 0168).
 The finished ROM the page hands out is named "Pokemon Psyduck Yellow 0-1-6-8.nds": the name the owner's 3DS forwarder CIA expects.
 
 Usage: build_release_0168.py <releases-repo clone> <0039-art-to-0168.xdelta> <0039 art ROM> <0168 ROM>
@@ -17,7 +17,7 @@ from pathlib import Path
 DATE = 'November 3, 2026'
 VERSION = '0168-BETA'
 LABEL = 'BETA 0.1.6.8'
-FOLDER, PREVIOUS = 'prototype-0168', 'prototype-0161'
+FOLDER, PREVIOUS = 'prototype-0168b', 'prototype-0161'      # 0168b: the update of 0168 with the Celadon Game Corner fix (a new folder because the page host caches by path)
 OWNER = os.environ.get('RELEASE_OWNER', 'Doctor-Pokemon')       # the account whose Psyduck-Yellow-Releases repo hosts the page
 PAGE = f'https://raw.githack.com/{OWNER}/Psyduck-Yellow-Releases/main/{FOLDER}/index.html'
 OUT_NAME = 'Pokemon Psyduck Yellow 0-1-6-8.nds'
@@ -26,7 +26,8 @@ PATCH_NAME = '0039-art-to-0168.xdelta'
 SOURCE_URL = os.environ.get('SOURCE_URL', 'https://github.com/Doctor-Pokemon/corvus-workshop/tree/publish-0168/psyduck-yellow/source')
 
 NEW_IN_0168 = [
-    '**Replaces BETA 0.1.61.** Use 0.1.6.8: it also opens the way from Lavender Town to Celadon, which 0.1.61 left closed.',
+    '**Replaces BETA 0.1.61.** Use 0.1.6.8: it also opens the way from Lavender Town to Celadon, and from Celadon\'s streets into the Game Corner and the Rocket Hideout, which 0.1.61 left closed.',
+    '**Celadon City (new):** the Game Corner (with the Rocket guard and the poster to the Rocket Hideout) now has a door from the street: the blue arched door. Mr. Game\'s room moved behind the red door next to it, and a door in the middle of his north wall leads to the Prize Redemption room, whose south door leads back.',
     '**Route 7 / Route 8 tunnel (new):** the sealed Underground Path doors on Route 8 (east of the Saffron gatehouse) and Route 7 now lead to each other, so you can get from Lavender Town to Celadon City before Saffron opens. This is a plain door-to-door shortcut with no tunnel interior yet. The old notice on Route 7 still says the path is sealed.',
     '**Lavender Town:** the Radio Tower door leads straight to Pokémon Tower 1F and its sign reads like Yellow\'s Pokémon Tower sign; both go back to the Radio Tower after your first Hall of Fame.',
     '**Pewter City:** Brock\'s escort walks at double speed on the straights and normal speed around corners; you cannot move until he has left the screen, and he stays at his post until you hold the Boulder Badge.',
@@ -36,7 +37,7 @@ NEW_IN_0168 = [
 ]
 
 BLURB = ('<p><strong>BETA 0.1.6.8 (prototype 0168) — for testing.</strong> The Kanto campaign from Pallet Town to the first Hall of Fame, plus the <strong>first parts of the Johto postgame</strong>. New since 0.1.61: '
-         'a Route 7 / Route 8 shortcut that opens the way from Lavender Town to Celadon, a Lavender Town Pokémon Tower door and sign like Yellow\'s, a faster Pewter escort, both Mart clerks selling, TM labels in the bag and the Vermilion Gym sign.</p>'
+         'a Route 7 / Route 8 shortcut that opens the way from Lavender Town to Celadon, a Celadon Game Corner that can finally be entered from the street, a Lavender Town Pokémon Tower door and sign like Yellow\'s, a faster Pewter escort, both Mart clerks selling, TM labels in the bag and the Vermilion Gym sign.</p>'
          '<p><strong>How much has been played:</strong> the developer has played New Game through Lavender Town on earlier builds. Everything after that, and all of Johto, has only been checked in small emulator tests on prepared saves, not played through. '
          'Expect bugs, including possible softlocks. <strong>Johto is unfinished:</strong> the postgame steps listed in the notes exist, but the rest of Johto has not been checked.</p>'
          '<p>Start a <strong>New Game</strong>; saves from older prototypes are not supported. Keep this build and its saves separate.</p>')
@@ -53,22 +54,23 @@ HOW TO PLAY
 4. Start a NEW GAME. Saves from older prototypes do not work (a renamed old save may behave strangely). Keep this build and its saves separate, and never reuse emulator save states between versions.
 Nothing is uploaded; the patching happens in your browser and every step is hash-checked. Expected final SHA256: {{sha}}
 
-WHAT IS NEW SINCE 0.1.61 (internal builds 0162-0170)
+WHAT IS NEW SINCE 0.1.61 (internal builds 0162-0171)
 ''' + '\n'.join('- ' + x.replace('**', '') for x in NEW_IN_0168) + '''
 - Everything from 0.1.61 is still here. The save layout is unchanged.
 
 WHAT HAS BEEN TESTED
 - The developer has played New Game through Lavender Town on earlier builds, partly on a real 3DS.
-- Everything in the list above has only had small emulator checks on prepared test saves (the door, sign, shop or escort used once and the exit taken). The Route 7 / Route 8 shortcut was walked in both directions in the emulator and has not yet been used on a real 3DS.
+- Everything in the list above has only had small emulator checks on prepared test saves (the door, sign, shop or escort used once and the exit taken). The Route 7 / Route 8 shortcut was walked in both directions in the emulator and confirmed on a real 3DS. The Celadon doors (Game Corner, Mr. Game, Prize room) were walked in the emulator only.
 - Everything after Lavender, and every Johto step, has only had small emulator checks on prepared test saves and has never been played through in one go.
 
 NOT BUILT YET
-Elevator floor-selection menus in Silph Co. and Rocket Hideout (stairs instead); the Rocket Hideout Lift Key and item balls; some stand-in wall and floor textures; Game Corner and Department Store extras; the Stellar type icon on the Pokedex info page and the PC storage preview (a placeholder shows); an interior for the Route 7 / Route 8 shortcut; most of Johto beyond the steps in earlier notes has not been checked.
+Elevator floor-selection menus in Silph Co. and Rocket Hideout (stairs instead); the Rocket Hideout Lift Key and item balls; some stand-in wall and floor textures; Game Corner and Department Store extras; the Stellar type icon on the Pokedex info page and the PC storage preview (a placeholder shows); an interior for the Route 7 / Route 8 shortcut; door art for the new door in Mr. Game\'s north wall (it shows a picture; you walk up into it); most of Johto beyond the steps in earlier notes has not been checked.
 
 KNOWN ISSUES
 Reported by the developer: the top screen can turn black in the overworld; saving and reloading fixes it (not investigated).
 Some move descriptions on the summary screen's Moves page are cut off at the right edge.
 The Lavender Town building with the Pokemon Tower door still looks like the Radio Tower from outside.
+The new door in the north wall of Mr. Game's room (Celadon) is drawn as a picture, with no door art yet.
 Mega Punch and Focus Punch both show as TM 001 in the bag's TM list.
 The Union Room (Pokemon Center 2nd floor) reads a missing structure and is left alone until online play exists.
 One freeze was reported when arriving in Cerulean after fighting a Route 25 trainer who blocked the path (not reproduced).
@@ -87,7 +89,7 @@ LOG_ENTRY = f'''
 
 [Create {LABEL}]({PAGE}). It builds from your original USA HeartGold file in your browser; nothing is uploaded. The finished game is named "{OUT_NAME}".
 
-What changed since 0.1.61 (internal builds 0162–0170):
+What changed since 0.1.61 (internal builds 0162–0171):
 ''' + '\n'.join('- ' + x for x in NEW_IN_0168) + '''
 - Not changed: the save layout.
 
@@ -180,11 +182,11 @@ def main(releases, delta, art_rom, new_rom):
         assert readme.count(old_text) == 1, old_text
         readme = readme.replace(old_text, new_text)
     readme = re.sub(r'\[hosted BETA 0\.1\.61 patching page\]\([^)]*\)', f'[hosted {LABEL} patching page]({PAGE})', readme)
-    new_line = "- **New in 0168:** a Route 7 / Route 8 shortcut opens the way from Lavender Town to Celadon; the Lavender Pokémon Tower door and sign follow Yellow; Brock's escort in Pewter is faster; both Mart clerks sell; the custom TMs show their TM numbers; the Vermilion Gym sign reads \"The Lightning Unovan\".\n"
+    new_line = "- **New in 0168:** a Route 7 / Route 8 shortcut opens the way from Lavender Town to Celadon; the Lavender Pokémon Tower door and sign follow Yellow; Brock's escort in Pewter is faster; both Mart clerks sell; the custom TMs show their TM numbers; the Vermilion Gym sign reads \"The Lightning Unovan\"; the Celadon Game Corner can be entered from the street.\n"
     marker_line = '- **New in 0161:**'
     assert readme.count(marker_line) == 1
     readme = readme.replace(marker_line, new_line + marker_line)
-    entry = (f'- **{LABEL} (prototype 0168) — {DATE} (beta, testing only).** Opens the way from Lavender Town to Celadon (Route 7 / Route 8 shortcut), plus the Lavender Pokémon Tower door and sign, a faster Pewter escort, both Mart clerks selling, TM labels and the Vermilion Gym sign. Everything else as in 0.1.61. Kanto complete to the first Hall of Fame; Johto unfinished.\n')
+    entry = (f'- **{LABEL} (prototype 0168) — {DATE} (beta, testing only).** Opens the way from Lavender Town to Celadon (Route 7 / Route 8 shortcut) and into the Celadon Game Corner, plus the Lavender Pokémon Tower door and sign, a faster Pewter escort, both Mart clerks selling, TM labels and the Vermilion Gym sign. Everything else as in 0.1.61. Kanto complete to the first Hall of Fame; Johto unfinished.\n')
     marker = '## Release history (newest first)\n'
     assert marker in readme
     readme = readme.replace(marker, marker + entry)

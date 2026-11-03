@@ -1337,15 +1337,15 @@ What changed since 0110 (internal builds 0111–0157):
 
 Reported, not fixed: the top screen sometimes turns black in the overworld (a save and reload fixes it); a freeze when arriving in Cerulean after Route 25 (not reproduced); the Union Room. Checked: small emulator tests on prepared saves (see the read-me). Source to rebuild this version: [https://github.com/Doctor-Pokemon/corvus-workshop/tree/publish-0161/psyduck-yellow/source](https://github.com/Doctor-Pokemon/corvus-workshop/tree/publish-0161/psyduck-yellow/source), proposed to ThatAnarchyDude/corvus-workshop (psyduck-yellow/source) by pull request.
 
-
 ## November 3, 2026 — BETA 0.1.6.8 (prototype 0168, BETA)
 
 **BETA, FOR TESTING ONLY. Not a complete game. The Kanto campaign is built; the first parts of the Johto postgame are built but Johto is unfinished and has not been played through.**
 
-[Create BETA 0.1.6.8](https://raw.githack.com/Doctor-Pokemon/Psyduck-Yellow-Releases/main/prototype-0168/index.html). It builds from your original USA HeartGold file in your browser; nothing is uploaded. The finished game is named "Pokemon Psyduck Yellow 0-1-6-8.nds".
+[Create BETA 0.1.6.8](https://raw.githack.com/Doctor-Pokemon/Psyduck-Yellow-Releases/main/prototype-0168b/index.html). It builds from your original USA HeartGold file in your browser; nothing is uploaded. The finished game is named "Pokemon Psyduck Yellow 0-1-6-8.nds".
 
-What changed since 0.1.61 (internal builds 0162–0170):
-- **Replaces BETA 0.1.61.** Use 0.1.6.8: it also opens the way from Lavender Town to Celadon, which 0.1.61 left closed.
+What changed since 0.1.61 (internal builds 0162–0171):
+- **Replaces BETA 0.1.61.** Use 0.1.6.8: it also opens the way from Lavender Town to Celadon, and from Celadon's streets into the Game Corner and the Rocket Hideout, which 0.1.61 left closed.
+- **Celadon City (new):** the Game Corner (with the Rocket guard and the poster to the Rocket Hideout) now has a door from the street: the blue arched door. Mr. Game's room moved behind the red door next to it, and a door in the middle of his north wall leads to the Prize Redemption room, whose south door leads back.
 - **Route 7 / Route 8 tunnel (new):** the sealed Underground Path doors on Route 8 (east of the Saffron gatehouse) and Route 7 now lead to each other, so you can get from Lavender Town to Celadon City before Saffron opens. This is a plain door-to-door shortcut with no tunnel interior yet. The old notice on Route 7 still says the path is sealed.
 - **Lavender Town:** the Radio Tower door leads straight to Pokémon Tower 1F and its sign reads like Yellow's Pokémon Tower sign; both go back to the Radio Tower after your first Hall of Fame.
 - **Pewter City:** Brock's escort walks at double speed on the straights and normal speed around corners; you cannot move until he has left the screen, and he stays at his post until you hold the Boulder Badge.
