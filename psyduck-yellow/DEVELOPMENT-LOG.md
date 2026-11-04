@@ -3,7 +3,7 @@
 A plain-language guide to what has changed, what you can play now, and what is
 still being built. Share this page with anyone following the project.
 
-**Last updated: November 3, 2026.**
+**Last updated: November 4, 2026.**
 
 [Watch LIVE testing with video and audio]()
 
@@ -1357,3 +1357,21 @@ What changed since 0.1.61 (internal builds 0162–0173):
 - Not changed: the save layout.
 
 Reported, not fixed: pressing A on a Celadon Game Corner slot machine hangs the game (the games are not built; do not use them); the top screen sometimes turns black in the overworld (a save and reload fixes it); cut-off move descriptions on the summary Moves page; the Lavender building's outside picture; a freeze when arriving in Cerulean after Route 25 (not reproduced); the Union Room. Checked: small emulator tests on prepared saves (see the read-me). Source to rebuild this version: [{SOURCE_URL}]({SOURCE_URL}).
+
+
+## November 4, 2026 — BETA 0.1.6.9 (prototype 0169, BETA)
+
+**BETA, FOR TESTING ONLY. Not a complete game. The Kanto campaign is built; the first parts of the Johto postgame are built but Johto is unfinished and has not been played through.**
+
+[Create BETA 0.1.6.9](https://raw.githack.com/Doctor-Pokemon/Psyduck-Yellow-Releases/main/prototype-0169/index.html). It builds from your original USA HeartGold file in your browser; nothing is uploaded. The finished game is named "Pokemon Psyduck Yellow 0-1-6-9.nds".
+
+What changed since 0.1.6.8 (internal builds 0174–0185):
+- **Replaces BETA 0.1.6.8.** Use 0.1.6.9: it has everything 0.1.6.8 had and finishes the road to Fuchsia: Strength and Surf can now be obtained in the game.
+- **Strength and Surf (new):** Sabrina gives you HM04 Strength after the Marsh Badge, and Janine (Fuchsia Gym) gives you HM03 Surf after your first win there, each once and with a new line from the leader. Strength now works with the Plain Badge or the Marsh Badge (it used to accept the Rainbow Badge). The Safari Zone is no longer on the route (HeartGold already has one in Johto).
+- **Fuchsia City (new):** Officer Jenny now stands in the Route 15 and Route 18 gatehouses and turns you back, with a rockslide line, until you hold the Marsh Badge (the Route 19 gatehouse was already closed). The Warden's granddaughter gives you his GOLD TEETH; the Warden thanks you with a NUGGET and a pun, then gives a NUGGET once a day, and after that he is only at home in the day and evening. Fixed: a full bag at his first NUGGET no longer leaves him mumbling forever.
+- **Route 12 Snorlax (new):** a sleeping Snorlax now sits on the Route 12 side pier from the start of the game (HeartGold hid it until the postgame). Talk to it with the Poke Flute from Mr. Fuji: you play the flute (jingle and message), it wakes and you battle it. The Poke Flute is now a real key item: it sits in the Key Items pocket, cannot be thrown away, and has the Yellow Flute's icon.
+- **Celadon Game Corner:** pressing A on a slot machine now shows "This machine is out of order." instead of hanging the game.
+- **Bag icons:** the Running Shoes and the Silph Scope have real icons instead of the "?" placeholder.
+- Not changed: the save layout.
+
+Reported, not fixed: the top screen sometimes turns black in the overworld (a save and reload fixes it); cut-off move descriptions on the summary Moves page; the Lavender building's outside picture; a freeze when arriving in Cerulean after Route 25 (not reproduced); the Union Room; no USE button for the Poke Flute in the bag; the Gen 5-9 items still show a "?" icon. Checked: small emulator tests on prepared saves (see the read-me), nothing confirmed on a real 3DS yet. Source to rebuild this version: [{SOURCE_URL}]({SOURCE_URL}).
