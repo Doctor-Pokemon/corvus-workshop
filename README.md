@@ -28,6 +28,6 @@ Licensing is **per project**, not repository-wide. The [Power Simulator](./power
 
 No blanket license is granted for the workshop's other materials or future projects. Each project will specify its own terms, and any license applies only to rights the owner can lawfully grant. GitHub platform terms and applicable law may provide separate rights.
 
-**Project credit:** Workshop projects are maintained by ThatAnarchyDude in collaboration with an AI assistant presented as Zander Corvus.
+**Project credit:** Workshop projects are maintained by ThatAnarchyDude in collaboration with Zander Corvus.
 
 Experimental simulators are educational tools and must not be used as the sole basis for building or sizing real electrical systems.
