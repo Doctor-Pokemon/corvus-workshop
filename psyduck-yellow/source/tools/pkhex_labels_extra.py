@@ -29,6 +29,8 @@ FLAGS = {
     0xA75: ('s', 'Pokémon Tower: Scene flag'),
     0xA7E: ('s', 'Pewter: Guide hidden (Boulder Badge owned)'),
     0xA8C: ('m', 'Bedroom PC: Initialised'), 0xB3B: ('m', 'Bedroom PC: Item taken'),
+    0xA54: ('g', 'Oak\'s Lab aide: Venusaurite given'), 0xA55: ('g', 'Oak\'s Lab aide: Charizardite X given'),
+    0xA56: ('g', 'Oak\'s Lab aide: Charizardite Y given'), 0xA57: ('g', 'Oak\'s Lab aide: Blastoisinite given'),
     0xA8D: ('s', 'Route 24: Nugget Bridge event'), 0xA94: ('s', 'Route 25: Bill event'),
 }
 WORK = {                                         # var id -> (category, label, value labels)
@@ -37,6 +39,9 @@ WORK = {                                         # var id -> (category, label, v
     0x4128: ('s', 'Johto postgame: Progress', '0:Not started,6:Elm has called (Johto unlocked),7:Mr. Pokémon met'),
     0x413C: ('s', 'Johto postgame: bonus Pokémon state', ''),
     0x4168: ('s', 'Oak escort: State', ''),
+    0x4044: ('s', 'Card Album: rematch wins 1 (2 bits per entry, Kanto leaders)', ''),
+    0x4049: ('s', 'Card Album: rematch wins 2 (2 bits per entry, Johto leaders)', ''),
+    0x4034: ('s', 'Card Album: rematch wins 3 (2 bits per entry, Elite Four)', ''),
     }
 
 def pid(s): return int(s, 16) if s.lower().startswith('0x') else int(s, 10)

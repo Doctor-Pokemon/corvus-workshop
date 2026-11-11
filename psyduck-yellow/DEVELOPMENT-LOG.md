@@ -3,7 +3,7 @@
 A plain-language guide to what has changed, what you can play now, and what is
 still being built. Share this page with anyone following the project.
 
-**Last updated: November 11, 2026.**
+**Last updated: November 12, 2026.**
 
 [Watch LIVE testing with video and audio]()
 
@@ -1410,3 +1410,20 @@ What changed since 0.2.0.0:
 - Not changed: the save layout.
 
 Known issues: The top screen can turn black in the overworld (a save and reload fixes it). Some move descriptions on the summary screen's Moves page are cut off at the right edge. Two red-screen crashes were each reported once on a real 3DS and could not be reproduced: falling off the path on the way out of the Ecruteak Gym, and opening the Pokémon menu. The new wild Pokémon, the League shop, the evolution changes and the Form Trader have only had small emulator tests on prepared saves; most of the forms the Form Trader offers were never tried. Wild Pokémon levels in Johto are not scaled by badges yet. Many of the added Gen 5-9 items still show a "?" icon in the bag. The Lavender Town building with the Pokémon Tower door still looks like the Radio Tower from outside. Johto is unfinished.
+
+
+## November 12, 2026 — ALPHA 0.1 (pre-release)
+
+**All features may not be in final version. PRE-RELEASE: still in the late stages of testing, but so far it seems to be complete. Johto is unfinished and has not been played through.**
+
+[Create ALPHA 0.1](https://raw.githack.com/Doctor-Pokemon/Psyduck-Yellow-Releases/main/prototype-alpha01/index.html). It builds from your original USA HeartGold file in your browser; nothing is uploaded. The finished game is named "Pokemon Psyduck Yellow ALPHA 0-1.nds". If you run into any problem, please let us know by submitting an official Issue in the Issues section of this repository: https://github.com/Doctor-Pokemon/Psyduck-Yellow-Releases/issues
+
+What changed since 0.2.1.0:
+- Legendary Pokémon can now be obtained. After your first Hall of Fame, Celebi waits at the Ilex Forest shrine, Regirock in Union Cave, Regice on the deepest floor of the Ice Path, Registeel in Mt. Mortar, Uxie outside the Ruins of Alph, Mesprit at the Lake of Rage and Azelf in Union Cave, each once you own enough Johto badges and only while that species is not yet registered as caught.
+- Mr. Pokémon now gives both the Blue Orb and the Red Orb. With the Red Orb in your bag, the orb in the Embedded Tower (the chamber behind the lower door on Route 47) summons one legendary Pokémon per day (a new one each weekday): it appears as its own follower sprite, walks up to you, and the battle starts when it touches you. Mew and Arceus can only appear once nearly all other Pokémon are registered as caught.
+- Added a Card Album key item with Gym Leader and Elite Four cards (Kanto and Johto) in three rarities. The card texts are placeholders.
+- Lorelei and Agatha have their own battle and overworld sprites, and the Kanto Elite Four speak their Pokémon Yellow lines.
+- Trainers' Pokémon no longer come out of Cherish Balls, and the Johto Gym Leaders no longer mention badges unlocking HM field moves (the HMs now come from the Kanto leaders).
+- Not changed: the save layout.
+
+Known issues: Catching the new legendary Pokémon, the weekly rollover of the daily encounter and the real Mew and Arceus conditions (nearly the whole National Pokédex registered) have not been tested end to end. The battle music of the daily Embedded Tower encounter was set up through the game engine but has not been confirmed by ear. Several Johto characters (not the Gym Leaders) still hand out HMs that you already own from Kanto. The top screen can turn black in the overworld (a save and reload fixes it). Some move descriptions on the summary screen's Moves page are cut off at the right edge. Two red-screen crashes were each reported once on a real 3DS and could not be reproduced: falling off the path on the way out of the Ecruteak Gym, and opening the Pokémon menu. Many of the added Gen 5-9 items still show a "?" icon in the bag. The Lavender Town building with the Pokémon Tower door still looks like the Radio Tower from outside. Johto is unfinished.

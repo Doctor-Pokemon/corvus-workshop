@@ -38,8 +38,11 @@ def video(data,w,h,pitch):
  if data and data != C.c_void_p(-1).value:frame=(C.string_at(data,pitch*h),w,h,pitch,fmt)
 @C.CFUNCTYPE(None,C.c_int16,C.c_int16)
 def audio(a,b):pass
+AUDIO=None                                           # test switch: set to a list to record the audio (bytes per batch, 16-bit stereo)
 @C.CFUNCTYPE(C.c_size_t,C.c_void_p,C.c_size_t)
-def batch(data,n):return n
+def batch(data,n):
+ if AUDIO is not None and data:AUDIO.append(C.string_at(data,n*4))
+ return n
 @C.CFUNCTYPE(None)
 def poll():pass
 @C.CFUNCTYPE(C.c_int16,C.c_uint,C.c_uint,C.c_uint,C.c_uint)

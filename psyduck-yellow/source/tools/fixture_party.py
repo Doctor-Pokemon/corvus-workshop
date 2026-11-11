@@ -69,6 +69,17 @@ def install(rom, species, held, level, items, battle, dex=False, warp=None, foll
         s.emit(605)
         s.data.extend(bytes([1, 0]))
         s.emit(602, 0).emit(608).emit(3, 10, 0x800C).emit(602, 1)
+    if os.environ.get('FIXTURE_COUNT'):                       # test-only (prototype 0251): env FIXTURE_COUNT=0x40FD - script command 343 CountUncaught into that work variable (read it back from RAM)
+        s.emit(343, int(os.environ['FIXTURE_COUNT'], 0))
+    if os.environ.get('FIXTURE_CAUGHT_PROBE'):                # test-only (prototype 0243): env FIXTURE_CAUGHT_PROBE=species,map,x,z - script command 336 CheckMonCaught; if the species is registered as caught, warp to map,x,z instead of the --warp position
+        sp, pm, px, pz = (int(v) for v in os.environ['FIXTURE_CAUGHT_PROBE'].split(','))
+        s.emit(336, sp, 0x800C).compare(0x800C, 1).jump('probe_hit', 1)
+        if warp:
+            s.emit(176, warp[0], 0, warp[1], warp[2], 0)
+        s.emit(97).emit(2)
+        s.label('probe_hit')
+        s.emit(176, pm, 0, px, pz, 0).emit(97).emit(2)
+        warp = None
     if warp:
         s.emit(176, warp[0], 0, warp[1], warp[2], 0)       # test-only teleport to map, x, z
     s.emit(97).emit(2)
