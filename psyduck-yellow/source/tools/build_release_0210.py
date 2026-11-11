@@ -1,9 +1,9 @@
 """Build the public prototype-0210 (BETA 0.2.1.0) release inside the Psyduck-Yellow-Releases repo (patches and documentation only; never a ROM, save or source).
 Same layout as build_release_0200.py: a self-contained prototype-0210 folder (the four older patch stages, the new final stage 0039 art -> 0210, the page, manifest and read-me), the README, the CHANGELOG and the development log.
-The page is derived from prototype-0200's. The shipped ROM is build 0234 = the published ROM 0230 + tools/form_trader_hisui.py ONLY (owner 2026-11-11: the only listed change is "Added Hisuian Forms to Form Trader NPC.").
+The page is derived from prototype-0200's. The shipped ROM is build 0233 (0230 -> stone_check.py -> form_trader_hisui.py -> stone_shop.py); the only listed change is "Added Hisuian Forms to Form Trader NPC." (owner 2026-11-11: the other additions are in the game but are not mentioned).
 The finished ROM the page hands out is named "Pokemon Psyduck Yellow 0-2-1-0.nds". All NEW public text is free of any mention of the Mega Evolution content (owner rule 2026-11-04); the builder asserts that no file it writes (or line it adds) contains the word.
 Disclaimer (owner 2026-11-11), on every page and note: "All features may not be in final version."
-Usage: build_release_0210.py <releases-repo clone> <0039-art-to-0210.xdelta> <0039 art ROM> <0234 ROM>
+Usage: build_release_0210.py <releases-repo clone> <0039-art-to-0210.xdelta> <0039 art ROM> <0233 ROM>
 """
 import hashlib
 import json
