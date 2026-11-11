@@ -63,7 +63,7 @@ def build(e, forms):
             a.jump('offer%d' % nxt[0] if nxt else 'decline')
     for i, f in enumerate(forms):
         a.label('apply%d' % i)
-        a.op(659, SLOT, f['form']).op(535, SLOT, LEVEL)
+        a.op(659, SLOT, f['form']).op(535, LEVEL, SLOT)
         for s in range(4):
             a.op(654, SLOT, s, 0)
         last = None
