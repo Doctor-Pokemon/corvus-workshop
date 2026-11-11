@@ -33,8 +33,8 @@ import set_person_sprite
 from map_edit import MapEdit
 from opening import Script
 
-MAP, ORB_TILE, ORB_SPRITE = 524, (17, 17), 87
-PLAYER_TILE, VISITOR_TILE, STEPS = (16, 17), (16, 9), 7             # the player stands at (16, 17); the visitor starts at (16, 9) and walks 7 steps down to (16, 16)
+MAPS, ORB_TILE, ORB_SPRITE = (524, 525, 526), (17, 17), 87                    # the orb stands in ALL THREE chambers: which Route 47 door leads to which chamber changes with the Hoenn progress variable (see below)
+PLAYER_TILE, VISITOR_TILE, STEPS = (15, 17), (15, 9), 7             # the player is moved to (15, 17); the visitor starts at (15, 9) and walks 7 steps down to (15, 16); column 15 avoids the chamber's own legendary at (16, 11)
 HIDE_FLAG, BGM, FOLLOWER_BASE = 0xAC7, 1174, 2500
 HOFN, HUB = 0x413E, 0x4031
 HAVE = {144, 145, 146, 150, 243, 244, 245, 249, 250, 380, 381, 382, 384, 483, 484, 487, 719}        # dex numbers with another avenue
@@ -216,7 +216,11 @@ def patch(rom):
     battle_music_hook.patch(rom)
     count_uncaught.patch(rom)
     both_orbs.patch(rom)
-    e = MapEdit(rom, MAP)
+    return [install(rom, mp, rows, sprites) for mp in MAPS]
+
+
+def install(rom, mp, rows, sprites):
+    e = MapEdit(rom, mp)
     msg = {}
     for key, text in TEXT.items():
         msg[key] = e.message(text)
@@ -242,19 +246,25 @@ def patch(rom):
         at += 5
     tail = header[at:]
     original = next((v for t, v in trows if t == 2), None)
-    assert original is not None
-    entry = Script().emit(30, HIDE_FLAG).emit(22)
-    entry.data.extend(bytes(4))
+    entry = Script().emit(30, HIDE_FLAG)
+    if original is not None:
+        entry.emit(22)
+        entry.data.extend(bytes(4))
+    else:
+        entry.emit(2)
     ecode = entry.finish()
     entry_id = e.script(lambda add: ecode)
-    new_start, old_start = script_start(e.bank, entry_id), script_start(e.bank, original)
-    fix = new_start + len(ecode) - 4
-    struct.pack_into('<i', e.bank, fix, old_start - (fix + 4))
-    trows = [(2, entry_id) if t == 2 else (t, v) for t, v in trows]
+    if original is not None:
+        new_start, old_start = script_start(e.bank, entry_id), script_start(e.bank, original)
+        fix = new_start + len(ecode) - 4
+        struct.pack_into('<i', e.bank, fix, old_start - (fix + 4))
+        trows = [(2, entry_id) if t == 2 else (t, v) for t, v in trows]
+    else:
+        trows = sorted(trows + [(2, entry_id)])
     e.scripts.files.append(b''.join(struct.pack('<BI', t, v) for t, v in trows) + tail)
     struct.pack_into('<H', e.d, e.at + 8, len(e.scripts.files) - 1)
     e.save()
-    return dict(map=MAP, orb=orb_id, visitor=visitor_id, talk=talk, entry=entry_id, original_entry=original, species=len(rows), icon_models=len(big), tiers={t: sum(1 for _, x in rows if x == t) for t in (2, 4, 6, 8)}, code_bytes=len(code))
+    return dict(map=mp, orb=orb_id, visitor=visitor_id, talk=talk, entry=entry_id, original_entry=original, species=len(rows), tiers={t: sum(1 for _, x in rows if x == t) for t in (2, 4, 6, 8)}, code_bytes=len(code))
 
 
 if __name__ == '__main__':
