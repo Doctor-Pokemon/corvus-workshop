@@ -1397,3 +1397,16 @@ What changed since 0.1.6.9 (internal builds 0186-0230):
 - Not changed: the save layout.
 
 Known issues: The top screen can turn black in the overworld (a save and reload fixes it). Some move descriptions on the summary screen's Moves page are cut off at the right edge. Two red-screen crashes were each reported once on a real 3DS and could not be reproduced: falling off the path on the way out of the Ecruteak Gym, and opening the Pokémon menu. The new wild Pokémon, the League shop, the evolution changes and the Form Trader have only had small emulator tests on prepared saves; most of the 34 forms were never tried. Wild Pokémon levels in Johto are not scaled by badges yet. Many of the added Gen 5-9 items still show a "?" icon in the bag. The Lavender Town building with the Pokémon Tower door still looks like the Radio Tower from outside. Johto is unfinished.
+
+
+## November 11, 2026 — BETA 0.2.0.1 (prototype 0201, BETA)
+
+**All features may not be in final version. BETA, FOR TESTING ONLY. Not a complete game. The Kanto campaign is built; more of the Johto postgame is built but Johto is unfinished and has not been played through.**
+
+[Create BETA 0.2.0.1](https://raw.githack.com/Doctor-Pokemon/Psyduck-Yellow-Releases/main/prototype-0201/index.html). It builds from your original USA HeartGold file in your browser; nothing is uploaded. The finished game is named "Pokemon Psyduck Yellow 0-2-0-1.nds".
+
+What changed since 0.2.0.0:
+- Added Hisuian Forms to Form Trader NPC.
+- Not changed: the save layout.
+
+Known issues: The top screen can turn black in the overworld (a save and reload fixes it). Some move descriptions on the summary screen's Moves page are cut off at the right edge. Two red-screen crashes were each reported once on a real 3DS and could not be reproduced: falling off the path on the way out of the Ecruteak Gym, and opening the Pokémon menu. The new wild Pokémon, the League shop, the evolution changes and the Form Trader have only had small emulator tests on prepared saves; most of the forms the Form Trader offers were never tried. Wild Pokémon levels in Johto are not scaled by badges yet. Many of the added Gen 5-9 items still show a "?" icon in the bag. The Lavender Town building with the Pokémon Tower door still looks like the Radio Tower from outside. Johto is unfinished.
