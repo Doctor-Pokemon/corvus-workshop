@@ -40,7 +40,7 @@ progression obstacles are added.
 Whirlwind uses spare item 118 and compatibility bit 103. Gen I compatibility
 comes from Yellow's base-stat TM lists; later species use HeartGold's Roar TM
 compatibility. Existing HeartGold TM04 Calm Mind and the earlier custom Bide,
-Water Gun and Mega Punch machines are preserved. Save structures and native
+Save structures and native
 pocket capacity are unchanged.
 
 ## Carried saves

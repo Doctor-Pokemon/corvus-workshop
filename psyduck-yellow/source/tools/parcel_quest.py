@@ -194,6 +194,7 @@ def closed(index, direction):
 
 
 def split_bank(data):
+    # WARNING (2026-11-09): this cuts each script at the next start IN LIST ORDER. Native banks are often stored out of order (e.g. bank 743: starts 22,107,333,401,1152 for ids 3,1,2,4,5), so an out-of-order script comes back EMPTY and its code is glued onto another one. Rebuilding a bank with split_bank + script_bank breaks those scripts (Viridian Gym guide, tools/viridian_guide_fix.py). Use viridian_guide_fix.script_extent for exact extents.
     count=next(i for i in range(400) if struct.unpack_from('<H',data,4*i)[0]==0xFD13)
     starts=[i*4+4+struct.unpack_from('<I',data,4*i)[0] for i in range(count)]
     return [data[a:b] for a,b in zip(starts,starts[1:]+[len(data)])]

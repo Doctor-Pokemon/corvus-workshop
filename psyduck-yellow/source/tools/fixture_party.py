@@ -42,6 +42,13 @@ def install(rom, species, held, level, items, battle, dex=False, warp=None, foll
     for pair in filter(None, os.environ.get('FIXTURE_VARS', '').split(',')):         # test-only: set script variables (env FIXTURE_VARS=0x406d=1,...)
         var, value = pair.split('=')
         s.emit(41, int(var, 0), int(value, 0))
+    if os.environ.get("FIXTURE_SETMOVE"):                                           # test-only: set a party move directly (party:slot:move)
+        party, slot, move = (int(v) for v in os.environ["FIXTURE_SETMOVE"].split(":"))
+        s.emit(41, 0x4010, party).emit(41, 0x4011, slot).emit(41, 0x4012, move)
+        s.emit(139, 0x4010, 0x4011, 0x4012)
+    if os.environ.get('FIXTURE_FORM'):                                                # test-only: SetMonForm (script command 659) on a party slot (env FIXTURE_FORM=slot:form)
+        slot, form = (int(v) for v in os.environ['FIXTURE_FORM'].split(':'))
+        s.emit(659, slot, form)
     if dex:
         s.emit(291).emit(30, 0x6B).emit(477)       # the project's own dex grant: give Pokedex, flag 0x6B, National Dex mode on (env FIXTURE_DEXMODE=0 for the Kanto-only start)
         s.data.append(int(os.environ.get('FIXTURE_DEXMODE', '1')))

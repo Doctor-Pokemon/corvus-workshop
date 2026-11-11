@@ -98,7 +98,7 @@ def imd_multi(textures, mats, quads, x0, z0, x1, z1, top):
         fmt, size = ('palette4', 4) if t.get('fmt') == 2 else ('palette16', 16)
         colors = list(t['palette'])[:size] + [(0, 0, 0)] * (size - len(t['palette']))
         pal = ' '.join('%04x' % (r | g << 5 | b << 10) for r, g, b in colors)
-        tex_xml.append(f'''            <tex_image color0_mode="color" format="{fmt}" height="{t['h']}" index="{i}" name="{t['name']}" original_height="{t['h']}" original_width="{t['w']}" palette_name="{t['name']}" path="" width="{t['w']}">
+        tex_xml.append(f'''            <tex_image color0_mode="{'transparency' if t.get('transp') else 'color'}" format="{fmt}" height="{t['h']}" index="{i}" name="{t['name']}" original_height="{t['h']}" original_width="{t['w']}" palette_name="{t['name']}" path="" width="{t['w']}">
                 <bitmap size="{len(t['pixels']) // 2}"> {words(t['pixels'])} </bitmap>
             </tex_image>''')
         pal_xml.append(f'            <tex_palette color_size="{size}" index="{i}" name="{t["name"]}"> {pal} </tex_palette>')

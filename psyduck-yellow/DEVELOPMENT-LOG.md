@@ -3,7 +3,7 @@
 A plain-language guide to what has changed, what you can play now, and what is
 still being built. Share this page with anyone following the project.
 
-**Last updated: November 4, 2026.**
+**Last updated: November 11, 2026.**
 
 [Watch LIVE testing with video and audio]()
 
@@ -1375,3 +1375,25 @@ What changed since 0.1.6.8 (internal builds 0174–0185):
 - Not changed: the save layout.
 
 Reported, not fixed: the top screen sometimes turns black in the overworld (a save and reload fixes it); cut-off move descriptions on the summary Moves page; the Lavender building's outside picture; a freeze when arriving in Cerulean after Route 25 (not reproduced); the Union Room; no USE button for the Poke Flute in the bag; the Gen 5-9 items still show a "?" icon. Checked: small emulator tests on prepared saves (see the read-me), nothing confirmed on a real 3DS yet. Source to rebuild this version: [{SOURCE_URL}]({SOURCE_URL}).
+
+
+## November 11, 2026 — BETA 0.2.0.0 (prototype 0200, BETA)
+
+**All features may not be in final version. BETA, FOR TESTING ONLY. Not a complete game. The Kanto campaign is built; more of the Johto postgame is built but Johto is unfinished and has not been played through.**
+
+[Create BETA 0.2.0.0](https://raw.githack.com/Doctor-Pokemon/Psyduck-Yellow-Releases/main/prototype-0200/index.html). It builds from your original USA HeartGold file in your browser; nothing is uploaded. The finished game is named "Pokemon Psyduck Yellow 0-2-0-0.nds".
+
+What changed since 0.1.6.9 (internal builds 0186-0230):
+- **Replaces BETA 0.1.6.9.** Everything from 0.1.6.9 is still here. **All features may not be in final version.**
+- **Johto postgame, further along:** the first Johto scenes (Elm's lab, the New Bark Town and Route 29 gate scenes) were repaired; a Johto Gym Leader is always in the gym until you have beaten him, and the postgame weekday schedule applies afterwards; Johto Gym Leaders' teams scale with your Johto badges; the S.S. Aqua ferry and its lost-granddaughter quest follow HeartGold's own flow.
+- **HMs from the Kanto gyms:** Brock gives Rock Smash, Misty Waterfall, Surge Fly, Blaine Rock Climb and Giovanni Whirlpool; the S.S. Anne captain gives Cut; Sabrina still gives Strength and Janine Surf. Each leader says what the HM does in the field and which Badge unlocks it.
+- **Silph Co. Field Kit:** after the Master Ball the Silph Co. President also gives you a Field Kit. With the right Badge it lets you clear Cut trees, Rock Smash rocks and Strength boulders without a Pokémon that knows the move.
+- **Bag descriptions:** items show real descriptions again (HeartGold's own text for the original items, new text for 52 of the added items).
+- **National Dex after your first Hall of Fame:** Kanto and Johto then use a second set of wild Pokémon tables. Hundreds of species the game never handed out now turn up in the rarer slots of grass, caves and water (legendary-class Pokémon are held back for later events). Before the first Hall of Fame nothing changes.
+- **Evolutions:** the Linking Cord now evolves every Pokémon that evolves by trade. Spritzee needs a held Sachet and Swirlix a held Whipped Dream, as in the games, and Kubfu can use its Scrolls.
+- **Pokémon League shop:** after your first Hall of Fame the clerk in the Pokémon League lobby also sells the evolution items nothing else gives out (the stones, Linking Cord, Whipped Dream, Sachet, Apples, Pots, Galarica items, Black Augurite, Peat Block, Scrolls, Armors and Metal Alloy).
+- **Form Trader:** a new NPC in the Johto Safari Zone Gate swaps a Pokémon for its Alolan or Galarian form (34 forms). Its stats, ability and moves follow the new form. The swap is one way.
+- **3DS:** a red-screen crash right before Morty's battle was worked around (confirmed on a real 3DS).
+- Not changed: the save layout.
+
+Known issues: The top screen can turn black in the overworld (a save and reload fixes it). Some move descriptions on the summary screen's Moves page are cut off at the right edge. Two red-screen crashes were each reported once on a real 3DS and could not be reproduced: falling off the path on the way out of the Ecruteak Gym, and opening the Pokémon menu. The new wild Pokémon, the League shop, the evolution changes and the Form Trader have only had small emulator tests on prepared saves; most of the 34 forms were never tried. Wild Pokémon levels in Johto are not scaled by badges yet. Many of the added Gen 5-9 items still show a "?" icon in the bag. The Lavender Town building with the Pokémon Tower door still looks like the Radio Tower from outside. Johto is unfinished.

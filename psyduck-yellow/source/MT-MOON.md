@@ -90,7 +90,7 @@ Native checks verified one sale, a second refusal, healing and the player PC
 menu. Focused tests cover the failure branches and preservation of services.
 
 `mtmoon_tms.py` adds reusable TM12 Water Gun (item 116, compatibility bit 101)
-and TM01 Mega Punch (item 117, bit 102). HeartGold's original TMs remain intact,
+HeartGold's original TMs remain intact,
 including Taunt and Focus Punch. Gen I compatibility follows Yellow; later
 species inherit Water Pulse and Focus Punch compatibility respectively. The
 existing native pocket capacity and save layout are retained. Thumb execution
@@ -107,7 +107,6 @@ condition, without new HM terrain obstacles or geometry changes. Native checks
 verified the complete battle and departure; their Rocket payout, music and battle transition are preserved. The ordinary Bug Catcher now stands in the eastern pocket at
 (24,16), keeping his line of sight clear of the scripted Rocket exit trigger.
 
-Native checks verified learning Mega Punch on Golduck while retaining the TM,
 then a confirmed normal save and fresh boot with the TM still present. The
 hidden Moon Stone is awarded once and stays collected through a normal save and
 fresh boot. The Rocket victory and hidden actor flags also persist after saving
@@ -136,7 +135,6 @@ personal trainer names have a seven-character limit.
 
 Both fossil branches and the Rocket battle were checked in the DS emulator.
 Water Gun was taught to a level-5 Psyduck without consuming its reusable TM.
-Earlier native checks cover Mega Punch, the hidden Moon Stone and Ether, the
 Magikarp sale, healing, shared PC storage and a level-11 B2F Geodude encounter.
 The release patch is decoded against the original USA HeartGold file and its
 browser downloader output must exactly match the release ROM's SHA-256.

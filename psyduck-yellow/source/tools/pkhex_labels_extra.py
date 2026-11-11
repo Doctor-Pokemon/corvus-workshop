@@ -35,13 +35,9 @@ WORK = {                                         # var id -> (category, label, v
     0x4059: ('s', 'Silph Co.: State', ''),
     0x406D: ('s', 'Pokémon Mansion: State (1)', ''), 0x406E: ('s', 'Pokémon Mansion: State (2)', ''), 0x406F: ('s', 'Pokémon Mansion: State (3)', ''),
     0x4128: ('s', 'Johto postgame: Progress', '0:Not started,6:Elm has called (Johto unlocked),7:Mr. Pokémon met'),
-    0x413C: ('s', 'Johto postgame: Mega Typhlosion state', ''),
+    0x413C: ('s', 'Johto postgame: bonus Pokémon state', ''),
     0x4168: ('s', 'Oak escort: State', ''),
-    0x4171: ('s', 'Pokémon Tower: Scene state (1)', ''), 0x4172: ('s', 'Pokémon Tower: Scene state (2)', ''), 0x4173: ('s', 'Pokémon Tower: Scene state (3)', ''),
-    0x4174: ('s', 'Rocket Hideout: State', ''),
-    0x4176: ('s', 'Silph Co.: State (2)', ''),
-    0x4177: ('s', 'Route 22: Rival state', ''),
-}
+    }
 
 def pid(s): return int(s, 16) if s.lower().startswith('0x') else int(s, 10)
 

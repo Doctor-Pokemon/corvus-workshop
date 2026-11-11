@@ -24,9 +24,7 @@ The starter line (species 1565-1582) mirrors this, each starter evolution being 
 |---|---|---|
 | Psyduck (54) | Moon Stone -> Golduck (55) | the Water Stone and level routes were removed |
 | Starter Psyduck (1563) | NOTHING | no evolution row |
-| Golduck (55) | - | no Mega |
 | Starter Golduck | DOES NOT EXIST | would be a new species |
-| Mega Psyduck | starter Psyduck only (1564) | Psyduckite |
 
 ## Level-up moves
 Psyduck: L1 Scratch, Tail Whip; L3 Water Gun; L6 Confusion; L9 Fury Swipes; L12 Water Pulse; L15 Disable; L18 Zen Headbutt; L21 Screech; L24 Aqua Tail; L27 Soak; L30 Psych Up; L34 Amnesia; L39 Wonder Room.
