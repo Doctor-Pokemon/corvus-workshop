@@ -23,9 +23,9 @@ An unofficial fan project that rebuilds **Pokémon Yellow's Kanto campaign insid
 - **[Plain-language development log](./psyduck-yellow/DEVELOPMENT-LOG.md)** — dated changes, current work and plans
 - **[Project folder](./psyduck-yellow/)** — hosted patching pages for earlier prototypes and playtest clips
 
-**What 0050 adds (since 0042):** your starter Eevee can evolve into all eight Eeveelutions and into the new **Novareon** (use a Sandwich on it), each with its own Mega Evolution; Novareon is the first **Stellar**-type Pokémon (takes normal damage from everything, same-type bonus on every move); a rainbow STELLAR type tag plus new Sandwich and Novareon icons; and fixes for the starters' evolution screen, summary-screen sprites and shiny Mega colours.
+**What 0050 adds (since 0042):** your starter Eevee can evolve into all eight Eeveelutions and into the new **Novareon** (use a Sandwich on it); Novareon is the first **Stellar**-type Pokémon (takes normal damage from everything, same-type bonus on every move); a rainbow STELLAR type tag plus new Sandwich and Novareon icons; and fixes for the starters' evolution screen, and summary-screen sprites.
 
-**What 0042 added (since 0041):** Silph Co., Victory Road, a second rival battle on Route 22, the Route 22 badge gate, and the way to the Indigo League and Hall of Fame. **0041** brought Pokémon Tower, the Celadon Gym, the Rocket Hideout, Routes 8 and 11–18, the Fuchsia, Saffron, Seafoam and Viridian gyms, the League, Mega Psyduck and free Mega Stones.
+**What 0042 added (since 0041):** Silph Co., Victory Road, a second rival battle on Route 22, the Route 22 badge gate, and the way to the Indigo League and Hall of Fame. **0041** brought Pokémon Tower, the Celadon Gym, the Rocket Hideout, Routes 8 and 11–18, the Fuchsia, Saffron, Seafoam and Viridian gyms, and the League.
 
 **How much has been played:** the developer has played New Game through Vermilion. Everything after that has only had small emulator tests, so expect bugs, including softlocks. Still to build: some side content (Silph Co. Card Key doors, Moltres, Safari Zone, Cinnabar Mansion, some extra gym trainers) and all of Johto.
 
