@@ -1416,13 +1416,14 @@ Known issues: The top screen can turn black in the overworld (a save and reload 
 
 **All features may not be in final version. PRE-RELEASE: still in the late stages of testing, but so far it seems to be complete. Johto is unfinished and has not been played through.**
 
-[Create ALPHA 0.1](https://raw.githack.com/Doctor-Pokemon/Psyduck-Yellow-Releases/main/prototype-alpha01b/index.html). It builds from your original USA HeartGold file in your browser; nothing is uploaded. The finished game is named "Pokemon Psyduck Yellow ALPHA 0-1.nds". If you run into any problem, please let us know by submitting an official Issue in the Issues section of this repository: https://github.com/Doctor-Pokemon/Psyduck-Yellow-Releases/issues
+[Create ALPHA 0.1](https://raw.githack.com/Doctor-Pokemon/Psyduck-Yellow-Releases/main/prototype-alpha01c/index.html). It builds from your original USA HeartGold file in your browser; nothing is uploaded. The finished game is named "Pokemon Psyduck Yellow ALPHA 0-1.nds". If you run into any problem, please let us know by submitting an official Issue in the Issues section of this repository: https://github.com/Doctor-Pokemon/Psyduck-Yellow-Releases/issues
 
 What changed since 0.2.1.0:
 - Legendary Pokémon can now be obtained. After your first Hall of Fame, Celebi waits at the Ilex Forest shrine, Regirock in Union Cave, Regice on the deepest floor of the Ice Path, Registeel in Mt. Mortar, Uxie outside the Ruins of Alph, Mesprit at the Lake of Rage and Azelf in Union Cave, each once you own enough Johto badges and only while that species is not yet registered as caught.
 - Mr. Pokémon now gives both the Blue Orb and the Red Orb. With the Red Orb in your bag, the orb in the Embedded Tower (the chamber behind the lower door on Route 47) summons one legendary Pokémon per day (a new one each weekday): it appears as its own follower sprite, walks up to you, and the battle starts when it touches you. Mew and Arceus can only appear once nearly all other Pokémon are registered as caught.
 - Added a Card Album key item with Gym Leader and Elite Four cards (Kanto and Johto) in three rarities. The card texts are placeholders.
 - Lorelei and Agatha have their own battle and overworld sprites, and the Kanto Elite Four speak their Pokémon Yellow lines.
+- Fixed a freeze: the battle against Lorelei (and the one against Agatha) in the Kanto Elite Four never started on emulators and crashed on a 3DS.
 - The Jade Orb can be obtained again: after you have caught both Kyogre and Groudon in the Embedded Tower, Professor Oak gives it to you, and it now opens the way to Rayquaza. The orb in the Embedded Tower now works in all three chambers.
 - The player's PC Item Storage now starts empty on a New Game (no starting items, evolution items or charms), and Fly can no longer be used until you have the Thunder Badge (the Fly HM still comes from Lt. Surge).
 - Trainers' Pokémon no longer come out of Cherish Balls, and the Johto Gym Leaders no longer mention badges unlocking HM field moves (the HMs now come from the Kanto leaders).
