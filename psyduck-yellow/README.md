@@ -3,7 +3,7 @@
 Pokémon Yellow's Kanto campaign rebuilt inside HeartGold's engine. **Latest: ALPHA 0.1** — for testing only; not a complete game. All features may not be in final version. The Kanto campaign up to the first Hall of Fame plus more of the Johto postgame; **Johto is unfinished and has not been played through.** The source in `source/` rebuilds this version (see `source/BUILDING.md`).
 
 ## Play it
-1. Open the **[ALPHA 0.1 patching page](https://raw.githack.com/Doctor-Pokemon/Psyduck-Yellow-Releases/main/prototype-alpha01d/index.html)** (or pick a release from the **[Releases page](https://github.com/ThatAnarchyDude/Psyduck-Yellow-Releases/releases)**).
+1. Open the **[ALPHA 0.1 patching page](https://raw.githack.com/Doctor-Pokemon/Psyduck-Yellow-Releases/main/prototype-alpha022/index.html)** (or pick a release from the **[Releases page](https://github.com/ThatAnarchyDude/Psyduck-Yellow-Releases/releases)**).
 2. Choose your **own, original, unmodified USA HeartGold `.nds`**.
 3. Click *Create my playable NDS*, wait for the checks, then download **Pokemon Psyduck Yellow ALPHA 0-1.nds** and load it in your DS emulator.
 4. Start a **New Game**. Saves from older prototypes are not supported.

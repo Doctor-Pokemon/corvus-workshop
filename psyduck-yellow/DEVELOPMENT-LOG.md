@@ -3,7 +3,7 @@
 A plain-language guide to what has changed, what you can play now, and what is
 still being built. Share this page with anyone following the project.
 
-**Last updated: November 12, 2026.**
+**Last updated: November 13, 2026.**
 
 [Watch LIVE testing with video and audio]()
 
@@ -1431,3 +1431,22 @@ What changed since 0.2.1.0:
 - Not changed: the save layout.
 
 Known issues: Rayquaza and the Embedded Tower after the Jade Orb have only been checked in pieces on prepared test saves, not played through. Catching the new legendary Pokémon, the weekly rollover of the daily encounter and the real Mew and Arceus conditions (nearly the whole National Pokédex registered) have not been tested end to end. The battle music of the daily Embedded Tower encounter was set up through the game engine but has not been confirmed by ear. Several Johto characters (not the Gym Leaders) still hand out HMs that you already own from Kanto. The top screen can turn black in the overworld (a save and reload fixes it). Some move descriptions on the summary screen's Moves page are cut off at the right edge. Two red-screen crashes were each reported once on a real 3DS and could not be reproduced: falling off the path on the way out of the Ecruteak Gym, and opening the Pokémon menu. Many of the added Gen 5-9 items still show a "?" icon in the bag. The Lavender Town building with the Pokémon Tower door still looks like the Radio Tower from outside. Johto is unfinished.
+
+
+## November 13, 2026 — ALPHA 0.2.2 (pre-release)
+
+**All features may not be in final version. PRE-RELEASE: still in the late stages of testing, but so far it seems to be complete. Johto is unfinished and has not been played through.**
+
+[Create ALPHA 0.2.2](https://raw.githack.com/Doctor-Pokemon/Psyduck-Yellow-Releases/main/prototype-alpha022/index.html). It builds from your original USA HeartGold file in your browser; nothing is uploaded. The finished game is named "Pokemon Psyduck Yellow ALPHA 0-2-2.nds". If you run into any problem, please let us know by submitting an official Issue in the Issues section of this repository: https://github.com/Doctor-Pokemon/Psyduck-Yellow-Releases/issues
+
+What changed since ALPHA 0.1:
+- Z-Moves (Johto postgame): after the credits, Mom gives you the Z-Ring. A Pokémon holding a Z-Crystal can use one Z-Move per battle: press the extra button beside CANCEL on the move menu, then pick a damaging move. It becomes the Z-Move of that move's type, never misses, and its power is worked out from the move you picked. Each of the eight Johto Gym Leaders gives one Z-Crystal, and the other ten are sold by the quiet man at the top-right stall outside the Johto Safari Zone gate. Z-Move side effects and animations are basic for now, and the Z-Crystal prices are a guess.
+- The Silph Co. Field Kit now covers more: with the Kit in your bag and the right Badge, Surf, Rock Climb, Waterfall and Whirlpool work without a Pokémon that knows the move (Cut, Rock Smash and Strength already did). Its lines no longer name your Pokémon ("Field Kit used Strength!").
+- Added a Taxi Pager key item: Lt. Surge gives it to you, once, with the Thunder Badge. Using it from the bag opens the Fly map and your lead Pokémon flies you there (a Corviknight shows in the Fly animation). Its texts are placeholders.
+- The Magnet Train Pass can be earned: winning the Kanto League now switches the Power Plant on, then the Copycat in Saffron City (her Clefairy doll, found through the woman in the Vermilion Pokémon Fan Club) gives you the Pass.
+- Steven Stone is back in the Pewter Museum and in Pewter City. The Hiker at the Embedded Tower entrance on Route 47 gives you an Enigma Stone; with it, the museum plays Steven's Enigma Stone scene, and afterwards Steven and Latios wait outside the museum in Pewter City. Latios can be battled (level 60 plus 5 for every Johto Badge) and caught. This chain has not been played through in order.
+- The Vs. Recorder is back as a normal item, and the Card Album has its own key item.
+- Fixed a softlock at the Olivine S.S. Aqua gate (a Professor Oak scene walked you out of the room) and one on the return ferry (talking to the sailor in the Vermilion port hall froze the game). Repaired eight NPC, sign and trigger scripts in six Kanto maps that ran another character's script.
+- Not changed: the save layout.
+
+Known issues: Z-Move side effects and animations are basic, a few Z-Moves with special rules (for example Weather Ball) use a plain power, and the Z-Crystal prices and several Taxi Pager and Z-Ring texts are placeholders. The Pewter City scenes with Steven and Latios, the Magnet Train ride after a real Hall of Fame and Rayquaza after the Jade Orb have only been checked in pieces on prepared test saves, not played through. Catching the new legendary Pokémon, the weekly rollover of the daily encounter and the real Mew and Arceus conditions (nearly the whole National Pokédex registered) have not been tested end to end. Several Johto characters (not the Gym Leaders) still hand out HMs that you already own from Kanto. The top screen can turn black in the overworld (a save and reload fixes it). Some move descriptions on the summary screen's Moves page are cut off at the right edge. Two red-screen crashes were each reported once on a real 3DS and could not be reproduced: falling off the path on the way out of the Ecruteak Gym, and opening the Pokémon menu. Many of the added Gen 5-9 items still show a "?" icon in the bag. The Lavender Town building with the Pokémon Tower door still looks like the Radio Tower from outside. Johto is unfinished.

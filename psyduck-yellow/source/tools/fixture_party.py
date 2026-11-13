@@ -80,6 +80,8 @@ def install(rom, species, held, level, items, battle, dex=False, warp=None, foll
         s.label('probe_hit')
         s.emit(176, pm, 0, px, pz, 0).emit(97).emit(2)
         warp = None
+    if os.environ.get('FIXTURE_SURF'):                       # test-only: start surfing (script command Surf with party slot 0) before the teleport
+        s.emit(41, 0x8000, 0).emit(178, 0x8000)
     if warp:
         s.emit(176, warp[0], 0, warp[1], warp[2], 0)       # test-only teleport to map, x, z
     s.emit(97).emit(2)
