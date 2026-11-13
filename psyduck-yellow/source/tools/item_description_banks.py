@@ -3,7 +3,7 @@ The engine (overlay 129, 0x23D8BE8 / 0x23D8E9C) reads an item's description from
 In this ROM bank 830 held leftover map text (the Pallet bedroom hint), so every original item showed nothing. Nobody's map header points at bank 830 (checked 2026-11-10 over all native and extension maps).
 This tool rewrites bank 830 with 537 rows: HeartGold's own text (its bank 221, one row per item) for every original id whose item is unchanged, our own custom rows 113-123 (taken from our bank 221, same ids), and for the two TMs whose move changed
 (items 361 and 385 = TM034 Moonblast, TM058 Dazzling Gleam) the move's description from our move description bank 749. Ids that were renamed cosmetically (same item, modern name) keep the vanilla text.
-NOT touched: banks 834-850 (items 537+: no source text exists, they stay as they are, so e.g. Eviolite and the Z-crystals still show wrong text) and bank 221 (Mega Stones, ids 2685+).
+NOT touched: banks 834-850 (items 537+: no source text exists, they stay as they are, so e.g. Eviolite still shows wrong text) and bank 221 (ids 2685+).
 Usage (from yellow-heartgold, PYTHONPATH=tools): item_description_banks.py <in.nds> <out.nds> <vanilla HeartGold.nds>"""
 import struct
 import sys
